@@ -158,6 +158,16 @@ class CardTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             render_card(long, DARK)
 
+    def test_single_overlong_word_raises(self):
+        word = Project("x", "X", "app", "x" * 400, "#x", "https://example.com/")
+        with self.assertRaisesRegex(ValueError, "54"):
+            render_card(word, DARK)
+        just_over = Project("x", "X", "app", "ok " + "x" * 55, "#x", "https://example.com/")
+        with self.assertRaises(ValueError):
+            render_card(just_over, DARK)
+        exact = Project("x", "X", "app", "x" * 54, "#x", "https://example.com/")
+        self.assertEqual(text_by_class(ET.fromstring(render_card(exact, DARK)), "d"), ["x" * 54])
+
     def test_five_lines_is_the_limit(self):
         # 5 lines of 54 chars fit; a sixth does not
         five = Project("x", "X", "app", " ".join(["a" * 53] * 5), "#x", "https://example.com/")

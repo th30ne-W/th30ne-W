@@ -18,10 +18,12 @@ KIND_LABELS = {"app": "APP", "private": "PRIVATE"}
 
 
 def wrap(text: str, limit: int = WRAP_AT) -> list[str]:
-    """Greedy word wrap; a word longer than `limit` gets a line to itself."""
+    """Greedy word wrap; a word longer than `limit` raises ValueError."""
     lines: list[str] = []
     line = ""
     for word in text.split():
+        if len(word) > limit:
+            raise ValueError(f"word of {len(word)} characters exceeds the wrap width of {limit}")
         candidate = f"{line} {word}" if line else word
         if line and len(candidate) > limit:
             lines.append(line)
