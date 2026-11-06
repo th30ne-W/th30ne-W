@@ -1,0 +1,450 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 835 180" role="img" aria-labelledby="t d">
+<title id="t">Contribution calendar</title>
+<desc id="d">2,197 contributions in the last year as of 2026-11-06, drawn as green matrix rain; brighter glyphs mark busier days.</desc>
+<style>.m{font:10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;fill:#9fe9a8}.g{font:12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;text-anchor:middle}.f{font:12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;fill:#e6ffe6}.u{font:12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;fill:#9fe9a8;text-anchor:end}.d0{fill-opacity:0.12}.d1{fill-opacity:0.35}.d2{fill-opacity:0.55}.d3{fill-opacity:0.78}.d4{fill-opacity:1}.hd{animation-name:r;animation-timing-function:linear;animation-iteration-count:infinite}@keyframes r{from{transform:translateY(-50px)}to{transform:translateY(155px)}}</style>
+<defs><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter><clipPath id="grid"><rect x="0" y="40" width="835" height="105"/></clipPath><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00ff00" stop-opacity="0"/><stop offset="0.5" stop-color="#00ff00" stop-opacity="0.55"/><stop offset="1" stop-color="#00ff00" stop-opacity="0"/></linearGradient></defs>
+<text class="m" x="20" y="24">Nov</text>
+<text class="m" x="95" y="24">Dec</text>
+<text class="m" x="155" y="24">Jan</text>
+<text class="m" x="215" y="24">Feb</text>
+<text class="m" x="275" y="24">Mar</text>
+<text class="m" x="350" y="24">Apr</text>
+<text class="m" x="410" y="24">May</text>
+<text class="m" x="485" y="24">Jun</text>
+<text class="m" x="545" y="24">Jul</text>
+<text class="m" x="605" y="24">Aug</text>
+<text class="m" x="680" y="24">Sep</text>
+<text class="m" x="740" y="24">Oct</text>
+<text class="m" x="800" y="24">Nov</text>
+<g class="g" fill="#00ff00">
+<text class="d0" x="26.5" y="51">ﾝ</text>
+<text class="d0" x="26.5" y="66">ﾏ</text>
+<text class="d0" x="26.5" y="81">5</text>
+<text class="d0" x="26.5" y="96">ﾃ</text>
+<text class="d0" x="26.5" y="111">ｺ</text>
+<text class="d0" x="26.5" y="126">ﾂ</text>
+<text class="d0" x="26.5" y="141">6</text>
+<text class="d0" x="41.5" y="51">ﾃ</text>
+<text class="d0" x="41.5" y="66">ﾌ</text>
+<text class="d0" x="41.5" y="81">5</text>
+<text class="d0" x="41.5" y="96">ｼ</text>
+<text class="d0" x="41.5" y="111">ｹ</text>
+<text class="d0" x="41.5" y="126">ﾈ</text>
+<text class="d0" x="41.5" y="141">ﾚ</text>
+<text class="d0" x="56.5" y="51">ﾆ</text>
+<text class="d0" x="56.5" y="66">ﾗ</text>
+<text class="d0" x="56.5" y="81">ｺ</text>
+<text class="d0" x="56.5" y="96">ﾋ</text>
+<text class="d1" x="56.5" y="111">ﾁ</text>
+<text class="d0" x="56.5" y="126">ﾑ</text>
+<text class="d0" x="56.5" y="141">ﾕ</text>
+<text class="d0" x="71.5" y="51">*</text>
+<text class="d0" x="71.5" y="66">2</text>
+<text class="d1" x="71.5" y="81">8</text>
+<text class="d2" x="71.5" y="96">7</text>
+<text class="d0" x="71.5" y="111">ｹ</text>
+<text class="d0" x="71.5" y="126">ｽ</text>
+<text class="d0" x="71.5" y="141">ｱ</text>
+<text class="d0" x="86.5" y="51">ｺ</text>
+<text class="d1" x="86.5" y="66">ﾍ</text>
+<text class="d0" x="86.5" y="81">ﾚ</text>
+<text class="d0" x="86.5" y="96">ｷ</text>
+<text class="d0" x="86.5" y="111">9</text>
+<text class="d0" x="86.5" y="126">*</text>
+<text class="d0" x="86.5" y="141">9</text>
+<text class="d0" x="101.5" y="51">ﾍ</text>
+<text class="d1" x="101.5" y="66">ﾅ</text>
+<text class="d0" x="101.5" y="81">ﾕ</text>
+<text class="d0" x="101.5" y="96">ｴ</text>
+<text class="d0" x="101.5" y="111">+</text>
+<text class="d0" x="101.5" y="126">ｵ</text>
+<text class="d0" x="101.5" y="141">ﾛ</text>
+<text class="d0" x="116.5" y="51">ﾏ</text>
+<text class="d1" x="116.5" y="66">ｽ</text>
+<text class="d0" x="116.5" y="81">8</text>
+<text class="d0" x="116.5" y="96">0</text>
+<text class="d0" x="116.5" y="111">9</text>
+<text class="d0" x="116.5" y="126">ﾛ</text>
+<text class="d0" x="116.5" y="141">ﾃ</text>
+<text class="d0" x="131.5" y="51">ﾖ</text>
+<text class="d0" x="131.5" y="66">1</text>
+<text class="d0" x="131.5" y="81">=</text>
+<text class="d0" x="131.5" y="96">ﾁ</text>
+<text class="d0" x="131.5" y="111">ｳ</text>
+<text class="d0" x="131.5" y="126">1</text>
+<text class="d0" x="131.5" y="141">ﾛ</text>
+<text class="d0" x="146.5" y="51">ｾ</text>
+<text class="d0" x="146.5" y="66">=</text>
+<text class="d0" x="146.5" y="81">ｵ</text>
+<text class="d0" x="146.5" y="96">ｸ</text>
+<text class="d0" x="146.5" y="111">+</text>
+<text class="d0" x="146.5" y="126">ｸ</text>
+<text class="d0" x="146.5" y="141">ｶ</text>
+<text class="d0" x="161.5" y="51">ｹ</text>
+<text class="d0" x="161.5" y="66">=</text>
+<text class="d0" x="161.5" y="81">ｾ</text>
+<text class="d0" x="161.5" y="96">=</text>
+<text class="d0" x="161.5" y="111">ﾗ</text>
+<text class="d1" x="161.5" y="126">ﾖ</text>
+<text class="d0" x="161.5" y="141">ﾖ</text>
+<text class="d0" x="176.5" y="51">ﾙ</text>
+<text class="d0" x="176.5" y="66">ﾐ</text>
+<text class="d0" x="176.5" y="81">ｾ</text>
+<text class="d0" x="176.5" y="96">ｷ</text>
+<text class="d0" x="176.5" y="111">ﾊ</text>
+<text class="d0" x="176.5" y="126">ｴ</text>
+<text class="d0" x="176.5" y="141">ﾔ</text>
+<text class="d0" x="191.5" y="51">:</text>
+<text class="d0" x="191.5" y="66">ﾗ</text>
+<text class="d0" x="191.5" y="81">ﾖ</text>
+<text class="d0" x="191.5" y="96">4</text>
+<text class="d0" x="191.5" y="111">3</text>
+<text class="d0" x="191.5" y="126">ｵ</text>
+<text class="d0" x="191.5" y="141">ﾑ</text>
+<text class="d0" x="206.5" y="51">ｱ</text>
+<text class="d0" x="206.5" y="66">5</text>
+<text class="d1" x="206.5" y="81">ﾝ</text>
+<text class="d1" x="206.5" y="96">ﾇ</text>
+<text class="d1" x="206.5" y="111">+</text>
+<text class="d1" x="206.5" y="126">ﾒ</text>
+<text class="d0" x="206.5" y="141">0</text>
+<text class="d0" x="221.5" y="51">=</text>
+<text class="d0" x="221.5" y="66">ﾕ</text>
+<text class="d0" x="221.5" y="81">ｹ</text>
+<text class="d0" x="221.5" y="96">ﾜ</text>
+<text class="d0" x="221.5" y="111">ﾚ</text>
+<text class="d1" x="221.5" y="126">ﾉ</text>
+<text class="d0" x="221.5" y="141">ｵ</text>
+<text class="d0" x="236.5" y="51">ﾈ</text>
+<text class="d0" x="236.5" y="66">ｲ</text>
+<text class="d0" x="236.5" y="81">ｴ</text>
+<text class="d0" x="236.5" y="96">7</text>
+<text class="d0" x="236.5" y="111">ｿ</text>
+<text class="d0" x="236.5" y="126">9</text>
+<text class="d0" x="236.5" y="141">ﾔ</text>
+<text class="d0" x="251.5" y="51">ﾋ</text>
+<text class="d0" x="251.5" y="66">ﾑ</text>
+<text class="d0" x="251.5" y="81">ｼ</text>
+<text class="d0" x="251.5" y="96">ｸ</text>
+<text class="d0" x="251.5" y="111">ﾊ</text>
+<text class="d1" x="251.5" y="126">ﾍ</text>
+<text class="d0" x="251.5" y="141">ﾝ</text>
+<text class="d0" x="266.5" y="51">ﾚ</text>
+<text class="d0" x="266.5" y="66">ﾀ</text>
+<text class="d0" x="266.5" y="81">ﾆ</text>
+<text class="d0" x="266.5" y="96">0</text>
+<text class="d0" x="266.5" y="111">ﾌ</text>
+<text class="d0" x="266.5" y="126">ｽ</text>
+<text class="d0" x="266.5" y="141">ｼ</text>
+<text class="d0" x="281.5" y="51">ｻ</text>
+<text class="d0" x="281.5" y="66">ｻ</text>
+<text class="d0" x="281.5" y="81">ﾍ</text>
+<text class="d0" x="281.5" y="96">1</text>
+<text class="d0" x="281.5" y="111">ｸ</text>
+<text class="d1" x="281.5" y="126">ﾈ</text>
+<text class="d0" x="281.5" y="141">ﾐ</text>
+<text class="d0" x="296.5" y="51">ﾋ</text>
+<text class="d0" x="296.5" y="66">ﾝ</text>
+<text class="d0" x="296.5" y="81">ﾀ</text>
+<text class="d0" x="296.5" y="96">9</text>
+<text class="d0" x="296.5" y="111">ｳ</text>
+<text class="d1" x="296.5" y="126">ﾖ</text>
+<text class="d0" x="296.5" y="141">1</text>
+<text class="d0" x="311.5" y="51">8</text>
+<text class="d1" x="311.5" y="66">3</text>
+<text class="d0" x="311.5" y="81">ｸ</text>
+<text class="d0" x="311.5" y="96">ﾆ</text>
+<text class="d0" x="311.5" y="111">ﾒ</text>
+<text class="d1" x="311.5" y="126">ﾅ</text>
+<text class="d1" x="311.5" y="141">ﾖ</text>
+<text class="d0" x="326.5" y="51">ﾊ</text>
+<text class="d1" x="326.5" y="66">ｸ</text>
+<text class="d0" x="326.5" y="81">ﾑ</text>
+<text class="d0" x="326.5" y="96">ﾃ</text>
+<text class="d0" x="326.5" y="111">ｳ</text>
+<text class="d0" x="326.5" y="126">ﾑ</text>
+<text class="d0" x="326.5" y="141">4</text>
+<text class="d2" x="341.5" y="51">ﾜ</text>
+<text class="d2" x="341.5" y="66">ﾌ</text>
+<text class="d2" x="341.5" y="81">ｾ</text>
+<text class="d1" x="341.5" y="96">1</text>
+<text class="d0" x="341.5" y="111">7</text>
+<text class="d1" x="341.5" y="126">ﾛ</text>
+<text class="d0" x="341.5" y="141">ﾁ</text>
+<text class="d1" x="356.5" y="51">*</text>
+<text class="d0" x="356.5" y="66">6</text>
+<text class="d1" x="356.5" y="81">ﾗ</text>
+<text class="d2" x="356.5" y="96">8</text>
+<text class="d1" x="356.5" y="111">ﾔ</text>
+<text class="d0" x="356.5" y="126">ﾐ</text>
+<text class="d1" x="356.5" y="141">6</text>
+<text class="d0" x="371.5" y="51">ﾐ</text>
+<text class="d0" x="371.5" y="66">ｻ</text>
+<text class="d0" x="371.5" y="81">ﾔ</text>
+<text class="d1" x="371.5" y="96">ｴ</text>
+<text class="d0" x="371.5" y="111">ﾚ</text>
+<text class="d0" x="371.5" y="126">ﾚ</text>
+<text class="d0" x="371.5" y="141">ﾔ</text>
+<text class="d0" x="386.5" y="51">2</text>
+<text class="d0" x="386.5" y="66">ﾅ</text>
+<text class="d1" x="386.5" y="81">ﾅ</text>
+<text class="d0" x="386.5" y="96">1</text>
+<text class="d1" x="386.5" y="111">ﾝ</text>
+<text class="d1" x="386.5" y="126">6</text>
+<text class="d1" x="386.5" y="141">ｸ</text>
+<text class="d1" x="401.5" y="51">1</text>
+<text class="d1" x="401.5" y="66">ｵ</text>
+<text class="d0" x="401.5" y="81">4</text>
+<text class="d1" x="401.5" y="96">ｳ</text>
+<text class="d1" x="401.5" y="111">ｲ</text>
+<text class="d0" x="401.5" y="126">ｹ</text>
+<text class="d0" x="401.5" y="141">ﾓ</text>
+<text class="d0" x="416.5" y="51">8</text>
+<text class="d0" x="416.5" y="66">ﾊ</text>
+<text class="d0" x="416.5" y="81">ｼ</text>
+<text class="d0" x="416.5" y="96">ｸ</text>
+<text class="d0" x="416.5" y="111">ﾗ</text>
+<text class="d2" x="416.5" y="126">ﾋ</text>
+<text class="d1" x="416.5" y="141">ﾏ</text>
+<text class="d1" x="431.5" y="51">ﾈ</text>
+<text class="d1" x="431.5" y="66">ﾌ</text>
+<text class="d1" x="431.5" y="81">ﾅ</text>
+<text class="d1" x="431.5" y="96">9</text>
+<text class="d0" x="431.5" y="111">ﾕ</text>
+<text class="d1" x="431.5" y="126">5</text>
+<text class="d0" x="431.5" y="141">ﾀ</text>
+<text class="d0" x="446.5" y="51">ｹ</text>
+<text class="d1" x="446.5" y="66">ﾍ</text>
+<text class="d1" x="446.5" y="81">1</text>
+<text class="d1" x="446.5" y="96">ﾃ</text>
+<text class="d0" x="446.5" y="111">ｳ</text>
+<text class="d0" x="446.5" y="126">ﾗ</text>
+<text class="d0" x="446.5" y="141">ｳ</text>
+<text class="d0" x="461.5" y="51">ｹ</text>
+<text class="d0" x="461.5" y="66">ﾘ</text>
+<text class="d0" x="461.5" y="81">ﾍ</text>
+<text class="d1" x="461.5" y="96">ﾘ</text>
+<text class="d1" x="461.5" y="111">1</text>
+<text class="d1" x="461.5" y="126">ｽ</text>
+<text class="d0" x="461.5" y="141">ﾔ</text>
+<text class="d0" x="476.5" y="51">=</text>
+<text class="d1" x="476.5" y="66">ﾐ</text>
+<text class="d1" x="476.5" y="81">6</text>
+<text class="d0" x="476.5" y="96">ﾑ</text>
+<text class="d1" x="476.5" y="111">ｳ</text>
+<text class="d1" x="476.5" y="126">ﾂ</text>
+<text class="d0" x="476.5" y="141">ｿ</text>
+<text class="d0" x="491.5" y="51">ﾔ</text>
+<text class="d1" x="491.5" y="66">ｸ</text>
+<text class="d1" x="491.5" y="81">ﾗ</text>
+<text class="d0" x="491.5" y="96">ｴ</text>
+<text class="d0" x="491.5" y="111">*</text>
+<text class="d1" x="491.5" y="126">ﾗ</text>
+<text class="d0" x="491.5" y="141">ｵ</text>
+<text class="d0" x="506.5" y="51">ｵ</text>
+<text class="d1" x="506.5" y="66">6</text>
+<text class="d1" x="506.5" y="81">ﾖ</text>
+<text class="d1" x="506.5" y="96">ﾋ</text>
+<text class="d1" x="506.5" y="111">*</text>
+<text class="d0" x="506.5" y="126">ｹ</text>
+<text class="d0" x="506.5" y="141">4</text>
+<text class="d0" x="521.5" y="51">ｻ</text>
+<text class="d1" x="521.5" y="66">ｺ</text>
+<text class="d1" x="521.5" y="81">ﾊ</text>
+<text class="d1" x="521.5" y="96">ｾ</text>
+<text class="d1" x="521.5" y="111">ﾒ</text>
+<text class="d1" x="521.5" y="126">ｻ</text>
+<text class="d0" x="521.5" y="141">ｹ</text>
+<text class="d0" x="536.5" y="51">ﾕ</text>
+<text class="d1" x="536.5" y="66">ｱ</text>
+<text class="d1" x="536.5" y="81">ﾛ</text>
+<text class="d1" x="536.5" y="96">ﾖ</text>
+<text class="d2" x="536.5" y="111">ﾁ</text>
+<text class="d2" x="536.5" y="126">ﾓ</text>
+<text class="d0" x="536.5" y="141">ﾚ</text>
+<text class="d1" x="551.5" y="51">ﾃ</text>
+<text class="d1" x="551.5" y="66">ｺ</text>
+<text class="d2" x="551.5" y="81">ﾖ</text>
+<text class="d2" x="551.5" y="96">ﾑ</text>
+<text class="d1" x="551.5" y="111">ﾀ</text>
+<text class="d1" x="551.5" y="126">ｵ</text>
+<text class="d1" x="551.5" y="141">ｹ</text>
+<text class="d1" x="566.5" y="51">ｾ</text>
+<text class="d1" x="566.5" y="66">4</text>
+<text class="d2" x="566.5" y="81">+</text>
+<text class="d2" x="566.5" y="96">6</text>
+<text class="d1" x="566.5" y="111">ﾛ</text>
+<text class="d3" x="566.5" y="126">ﾆ</text>
+<text class="d1" x="566.5" y="141">ｸ</text>
+<text class="d1" x="581.5" y="51">ﾇ</text>
+<text class="d1" x="581.5" y="66">4</text>
+<text class="d1" x="581.5" y="81">ﾜ</text>
+<text class="d1" x="581.5" y="96">ﾕ</text>
+<text class="d1" x="581.5" y="111">ﾕ</text>
+<text class="d1" x="581.5" y="126">ｷ</text>
+<text class="d0" x="581.5" y="141">ﾕ</text>
+<text class="d0" x="596.5" y="51">ｱ</text>
+<text class="d1" x="596.5" y="66">ﾈ</text>
+<text class="d1" x="596.5" y="81">ﾓ</text>
+<text class="d2" x="596.5" y="96">ｳ</text>
+<text class="d2" x="596.5" y="111">ﾈ</text>
+<text class="d3" x="596.5" y="126">ﾕ</text>
+<text class="d3" x="596.5" y="141">0</text>
+<text class="d2" x="611.5" y="51">ｱ</text>
+<text class="d2" x="611.5" y="66">ﾃ</text>
+<text class="d1" x="611.5" y="81">ﾉ</text>
+<text class="d2" x="611.5" y="96">ﾈ</text>
+<text class="d0" x="611.5" y="141">ﾉ</text>
+<text class="d1" x="626.5" y="51">8</text>
+<text class="d1" x="626.5" y="66">ﾃ</text>
+<text class="d1" x="626.5" y="81">ﾒ</text>
+<text class="d0" x="626.5" y="96">+</text>
+<text class="d0" x="626.5" y="111">ﾆ</text>
+<text class="d1" x="626.5" y="126">ｽ</text>
+<text class="d0" x="626.5" y="141">ﾒ</text>
+<text class="d0" x="641.5" y="51">ﾌ</text>
+<text class="d1" x="641.5" y="66">ｻ</text>
+<text class="d0" x="641.5" y="81">ﾕ</text>
+<text class="d0" x="641.5" y="96">ﾒ</text>
+<text class="d0" x="641.5" y="111">ﾘ</text>
+<text class="d0" x="641.5" y="126">ﾆ</text>
+<text class="d0" x="641.5" y="141">ｽ</text>
+<text class="d1" x="656.5" y="51">:</text>
+<text class="d0" x="656.5" y="66">ﾐ</text>
+<text class="d0" x="656.5" y="81">ｴ</text>
+<text class="d0" x="656.5" y="96">ﾉ</text>
+<text class="d1" x="656.5" y="111">ﾝ</text>
+<text class="d0" x="656.5" y="126">*</text>
+<text class="d0" x="656.5" y="141">ﾏ</text>
+<text class="d0" x="671.5" y="51">ｴ</text>
+<text class="d1" x="671.5" y="66">ﾋ</text>
+<text class="d1" x="671.5" y="81">ｻ</text>
+<text class="d2" x="671.5" y="96">ｶ</text>
+<text class="d1" x="671.5" y="111">ｳ</text>
+<text class="d1" x="671.5" y="126">ｻ</text>
+<text class="d0" x="671.5" y="141">ﾕ</text>
+<text class="d0" x="686.5" y="51">ｴ</text>
+<text class="d1" x="686.5" y="66">ﾐ</text>
+<text class="d1" x="686.5" y="81">ﾆ</text>
+<text class="d1" x="686.5" y="96">ﾝ</text>
+<text class="d2" x="686.5" y="111">ｳ</text>
+<text class="d1" x="686.5" y="126">ﾜ</text>
+<text class="d0" x="686.5" y="141">ﾉ</text>
+<text class="d1" x="701.5" y="51">0</text>
+<text class="d1" x="701.5" y="66">ﾃ</text>
+<text class="d1" x="701.5" y="81">*</text>
+<text class="d1" x="701.5" y="96">2</text>
+<text class="d2" x="701.5" y="111">ﾝ</text>
+<text class="d2" x="701.5" y="126">ｻ</text>
+<text class="d0" x="701.5" y="141">2</text>
+<text class="d1" x="716.5" y="51">ﾅ</text>
+<text class="d1" x="716.5" y="66">*</text>
+<text class="d3" x="716.5" y="96">ｻ</text>
+<text class="d3" x="716.5" y="111">ﾑ</text>
+<text class="d3" x="716.5" y="126">ｸ</text>
+<text class="d2" x="716.5" y="141">*</text>
+<text class="d1" x="731.5" y="51">7</text>
+<text class="d2" x="731.5" y="66">ﾊ</text>
+<text class="d1" x="731.5" y="81">ﾒ</text>
+<text class="d2" x="731.5" y="96">ﾕ</text>
+<text class="d2" x="731.5" y="111">ﾗ</text>
+<text class="d1" x="731.5" y="126">ﾑ</text>
+<text class="d0" x="731.5" y="141">ﾔ</text>
+<text class="d1" x="746.5" y="51">7</text>
+<text class="d2" x="746.5" y="66">ﾒ</text>
+<text class="d2" x="746.5" y="81">ｻ</text>
+<text class="d1" x="746.5" y="96">ｱ</text>
+<text class="d2" x="746.5" y="111">ﾍ</text>
+<text class="d3" x="746.5" y="126">ﾍ</text>
+<text class="d1" x="746.5" y="141">ｵ</text>
+<text class="d1" x="761.5" y="51">2</text>
+<text class="d2" x="761.5" y="66">ｷ</text>
+<text class="d3" x="761.5" y="81">:</text>
+<text class="d3" x="761.5" y="96">ﾂ</text>
+<text class="d3" x="761.5" y="111">=</text>
+<text class="d0" x="761.5" y="141">ﾏ</text>
+<text class="d2" x="776.5" y="51">ｾ</text>
+<text class="d3" x="776.5" y="66">8</text>
+<text class="d3" x="776.5" y="96">0</text>
+<text class="d3" x="776.5" y="111">ﾖ</text>
+<text class="d3" x="776.5" y="126">ｽ</text>
+<text class="d1" x="776.5" y="141">ｿ</text>
+<text class="d1" x="791.5" y="51">ﾓ</text>
+<text class="d1" x="791.5" y="66">ﾐ</text>
+<text class="d2" x="791.5" y="81">ｸ</text>
+<text class="d2" x="791.5" y="96">ｸ</text>
+<text class="d0" x="791.5" y="141">ｾ</text>
+<text class="d2" x="806.5" y="51">ﾇ</text>
+<text class="d3" x="806.5" y="66">ｸ</text>
+<text class="d3" x="806.5" y="96">ｺ</text>
+<text class="d3" x="806.5" y="126">3</text>
+<g filter="url(#glow)">
+<text class="d4" x="611.5" y="111">ﾝ</text>
+<text class="d4" x="611.5" y="126">ｿ</text>
+<text class="d4" x="716.5" y="81">6</text>
+<text class="d4" x="761.5" y="126">ﾙ</text>
+<text class="d4" x="776.5" y="81">ｹ</text>
+<text class="d4" x="791.5" y="111">ｽ</text>
+<text class="d4" x="791.5" y="126">0</text>
+<text class="d4" x="806.5" y="81">ｳ</text>
+<text class="d4" x="806.5" y="111">=</text>
+</g>
+</g>
+<g clip-path="url(#grid)">
+<rect class="hd" x="20" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.3s;animation-delay:-5.5s"/>
+<rect class="hd" x="35" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.1s;animation-delay:-3.5s"/>
+<rect class="hd" x="50" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.8s;animation-delay:-7.4s"/>
+<rect class="hd" x="65" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.6s;animation-delay:-2.5s"/>
+<rect class="hd" x="80" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.6s;animation-delay:-0.5s"/>
+<rect class="hd" x="95" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.3s;animation-delay:-4.7s"/>
+<rect class="hd" x="110" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.1s;animation-delay:-5.8s"/>
+<rect class="hd" x="125" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.0s;animation-delay:-0.8s"/>
+<rect class="hd" x="140" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.5s;animation-delay:-4.3s"/>
+<rect class="hd" x="155" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.6s;animation-delay:-2.1s"/>
+<rect class="hd" x="170" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.1s;animation-delay:-2.6s"/>
+<rect class="hd" x="185" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.5s;animation-delay:-3.1s"/>
+<rect class="hd" x="200" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.6s;animation-delay:-3.7s"/>
+<rect class="hd" x="215" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.7s;animation-delay:-3.2s"/>
+<rect class="hd" x="230" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.0s;animation-delay:-2.8s"/>
+<rect class="hd" x="245" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.8s;animation-delay:-0.1s"/>
+<rect class="hd" x="260" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.1s;animation-delay:-2.5s"/>
+<rect class="hd" x="275" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.8s;animation-delay:-4.7s"/>
+<rect class="hd" x="290" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.3s;animation-delay:-2.8s"/>
+<rect class="hd" x="305" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.5s;animation-delay:-5.1s"/>
+<rect class="hd" x="320" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.6s;animation-delay:-5.2s"/>
+<rect class="hd" x="335" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.2s;animation-delay:-2.9s"/>
+<rect class="hd" x="350" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.8s;animation-delay:-1.1s"/>
+<rect class="hd" x="365" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.7s;animation-delay:-7.3s"/>
+<rect class="hd" x="380" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.7s;animation-delay:-5.6s"/>
+<rect class="hd" x="395" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.2s;animation-delay:-4.8s"/>
+<rect class="hd" x="410" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.9s;animation-delay:-1.4s"/>
+<rect class="hd" x="425" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.4s;animation-delay:-4.5s"/>
+<rect class="hd" x="440" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.0s;animation-delay:-0.5s"/>
+<rect class="hd" x="455" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.0s;animation-delay:-2.1s"/>
+<rect class="hd" x="470" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.9s;animation-delay:-1.7s"/>
+<rect class="hd" x="485" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:3.6s;animation-delay:-0.4s"/>
+<rect class="hd" x="500" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:3.8s;animation-delay:-0.8s"/>
+<rect class="hd" x="515" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.1s;animation-delay:-3.9s"/>
+<rect class="hd" x="530" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.9s;animation-delay:-3.5s"/>
+<rect class="hd" x="545" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.0s;animation-delay:-4.5s"/>
+<rect class="hd" x="560" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.0s;animation-delay:-4.9s"/>
+<rect class="hd" x="575" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.6s;animation-delay:-0.6s"/>
+<rect class="hd" x="590" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.4s;animation-delay:-2.7s"/>
+<rect class="hd" x="605" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.4s;animation-delay:-1.7s"/>
+<rect class="hd" x="620" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.6s;animation-delay:-4.9s"/>
+<rect class="hd" x="635" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.2s;animation-delay:-1.2s"/>
+<rect class="hd" x="650" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.4s;animation-delay:-0.2s"/>
+<rect class="hd" x="665" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:3.7s;animation-delay:-2.6s"/>
+<rect class="hd" x="680" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.3s;animation-delay:-2.9s"/>
+<rect class="hd" x="695" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.7s;animation-delay:-2.3s"/>
+<rect class="hd" x="710" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.5s;animation-delay:-3.0s"/>
+<rect class="hd" x="725" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.1s;animation-delay:-2.2s"/>
+<rect class="hd" x="740" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:6.0s;animation-delay:-0.8s"/>
+<rect class="hd" x="755" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:3.8s;animation-delay:-1.6s"/>
+<rect class="hd" x="770" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:5.7s;animation-delay:-1.5s"/>
+<rect class="hd" x="785" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:4.6s;animation-delay:-2.3s"/>
+<rect class="hd" x="800" y="0" width="13" height="45" fill="url(#hg)" style="animation-duration:7.9s;animation-delay:-0.4s"/>
+</g>
+<text class="f" x="20" y="167">2,197 contributions in the last year</text>
+<text class="u" x="815" y="167">updated 2026-11-06</text>
+</svg>
