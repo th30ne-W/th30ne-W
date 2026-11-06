@@ -84,7 +84,11 @@ def run_calendar(args: argparse.Namespace) -> int:
     out = Path(args.out)
     # render everything before touching the output directory
     rendered = [
-        (f"calendar-{theme.name}{suffix}.svg", render_calendar(cal, theme, animated, generated_on).encode("utf-8"))
+        (
+            f"calendar-{prefix}{theme.name}{suffix}.svg",
+            render_calendar(cal, theme, animated, generated_on, layout).encode("utf-8"),
+        )
+        for layout, prefix in (("desktop", ""), ("mobile", "mobile-"))
         for animated, suffix in ((True, ""), (False, "-static"))
         for theme in THEMES
     ]
@@ -101,7 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     build.add_argument("--check", action="store_true", help="compare with files on disk instead of writing")
     calendar = sub.add_parser("calendar", help="render the contribution calendar SVGs from GitHub GraphQL")
     calendar.add_argument("--login", required=True, help="GitHub login whose calendar to draw")
-    calendar.add_argument("--out", required=True, help="directory to write the four SVGs into")
+    calendar.add_argument("--out", required=True, help="directory to write the eight SVGs into")
     calendar.add_argument("--fixture", help="read a saved GraphQL response instead of calling the API")
     calendar.add_argument("--date", type=iso_date, help="generation date, YYYY-MM-DD (default: today, UTC)")
     args = parser.parse_args(argv)

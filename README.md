@@ -67,6 +67,10 @@ Laya Computer Use and Homelab are private repositories; details on [williamnunes
 
 <a href="https://github.com/th30ne-W">
 <picture>
+  <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/calendar/calendar-mobile-light-static.svg">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="assets/calendar/calendar-mobile-dark-static.svg">
+  <source media="(prefers-color-scheme: light) and (max-width: 600px)" srcset="assets/calendar/calendar-mobile-light.svg">
+  <source media="(max-width: 600px)" srcset="assets/calendar/calendar-mobile-dark.svg">
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: light)" srcset="assets/calendar/calendar-light-static.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/calendar/calendar-dark-static.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/calendar/calendar-light.svg">

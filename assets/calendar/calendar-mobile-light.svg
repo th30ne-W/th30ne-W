@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 435 202" role="img" aria-labelledby="t d">
+<title id="t">Contribution calendar</title>
+<desc id="d">2,207 contributions in the last year as of 2026-11-06. Each square is one day; brighter squares with matrix glyphs mark busier days, empty days are dim.</desc>
+<style>.m{font:12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;fill:#2f5d43}.w{text-anchor:end}.f{font:14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;fill:#0d0d0d}.d{font:700 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;text-anchor:middle}.d1,.d2{fill:#0d0d0d}.d3,.d4{fill:#eef2f1}.c0{fill:#087a37;fill-opacity:0.12}.c1{fill:#087a37;fill-opacity:0.32}.c2{fill:#087a37;fill-opacity:0.52}.c3{fill:#087a37;fill-opacity:0.76}.c4{fill:#087a37;fill-opacity:1}.hd{animation-name:r;animation-timing-function:linear;animation-iteration-count:infinite}@keyframes r{from{transform:translateY(-50px)}to{transform:translateY(155px)}}</style>
+<defs><clipPath id="grid"><rect x="0" y="40" width="435" height="105"/></clipPath><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#087a37" stop-opacity="0"/><stop offset="0.5" stop-color="#087a37" stop-opacity="0.25"/><stop offset="1" stop-color="#087a37" stop-opacity="0"/></linearGradient></defs>
+<text class="m" x="34" y="24">May</text>
+<text class="m" x="94" y="24">Jun</text>
+<text class="m" x="154" y="24">Jul</text>
+<text class="m" x="214" y="24">Aug</text>
+<text class="m" x="289" y="24">Sep</text>
+<text class="m" x="349" y="24">Oct</text>
+<text class="m" x="409" y="24">Nov</text>
+<text class="m w" x="28" y="64">Mon</text>
+<text class="m w" x="28" y="94">Wed</text>
+<text class="m w" x="28" y="124">Fri</text>
+<g>
+<rect class="c1" x="34" y="40" width="12" height="12" rx="2"/><text class="d d1" x="40" y="49.5">ﾈ</text>
+<rect class="c1" x="34" y="55" width="12" height="12" rx="2"/><text class="d d1" x="40" y="64.5">ﾌ</text>
+<rect class="c1" x="34" y="70" width="12" height="12" rx="2"/><text class="d d1" x="40" y="79.5">ﾅ</text>
+<rect class="c1" x="34" y="85" width="12" height="12" rx="2"/><text class="d d1" x="40" y="94.5">9</text>
+<rect class="c0" x="34" y="100" width="12" height="12" rx="2"/>
+<rect class="c1" x="34" y="115" width="12" height="12" rx="2"/><text class="d d1" x="40" y="124.5">5</text>
+<rect class="c0" x="34" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="49" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="49" y="55" width="12" height="12" rx="2"/><text class="d d1" x="55" y="64.5">ﾍ</text>
+<rect class="c1" x="49" y="70" width="12" height="12" rx="2"/><text class="d d1" x="55" y="79.5">1</text>
+<rect class="c1" x="49" y="85" width="12" height="12" rx="2"/><text class="d d1" x="55" y="94.5">ﾃ</text>
+<rect class="c0" x="49" y="100" width="12" height="12" rx="2"/>
+<rect class="c0" x="49" y="115" width="12" height="12" rx="2"/>
+<rect class="c0" x="49" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="64" y="40" width="12" height="12" rx="2"/>
+<rect class="c0" x="64" y="55" width="12" height="12" rx="2"/>
+<rect class="c0" x="64" y="70" width="12" height="12" rx="2"/>
+<rect class="c1" x="64" y="85" width="12" height="12" rx="2"/><text class="d d1" x="70" y="94.5">ﾘ</text>
+<rect class="c1" x="64" y="100" width="12" height="12" rx="2"/><text class="d d1" x="70" y="109.5">1</text>
+<rect class="c1" x="64" y="115" width="12" height="12" rx="2"/><text class="d d1" x="70" y="124.5">ｽ</text>
+<rect class="c0" x="64" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="79" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="79" y="55" width="12" height="12" rx="2"/><text class="d d1" x="85" y="64.5">ﾐ</text>
+<rect class="c1" x="79" y="70" width="12" height="12" rx="2"/><text class="d d1" x="85" y="79.5">6</text>
+<rect class="c0" x="79" y="85" width="12" height="12" rx="2"/>
+<rect class="c1" x="79" y="100" width="12" height="12" rx="2"/><text class="d d1" x="85" y="109.5">ｳ</text>
+<rect class="c1" x="79" y="115" width="12" height="12" rx="2"/><text class="d d1" x="85" y="124.5">ﾂ</text>
+<rect class="c0" x="79" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="94" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="94" y="55" width="12" height="12" rx="2"/><text class="d d1" x="100" y="64.5">ｸ</text>
+<rect class="c1" x="94" y="70" width="12" height="12" rx="2"/><text class="d d1" x="100" y="79.5">ﾗ</text>
+<rect class="c0" x="94" y="85" width="12" height="12" rx="2"/>
+<rect class="c0" x="94" y="100" width="12" height="12" rx="2"/>
+<rect class="c1" x="94" y="115" width="12" height="12" rx="2"/><text class="d d1" x="100" y="124.5">ﾗ</text>
+<rect class="c0" x="94" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="109" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="109" y="55" width="12" height="12" rx="2"/><text class="d d1" x="115" y="64.5">6</text>
+<rect class="c1" x="109" y="70" width="12" height="12" rx="2"/><text class="d d1" x="115" y="79.5">ﾖ</text>
+<rect class="c1" x="109" y="85" width="12" height="12" rx="2"/><text class="d d1" x="115" y="94.5">ﾋ</text>
+<rect class="c1" x="109" y="100" width="12" height="12" rx="2"/><text class="d d1" x="115" y="109.5">*</text>
+<rect class="c0" x="109" y="115" width="12" height="12" rx="2"/>
+<rect class="c0" x="109" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="124" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="124" y="55" width="12" height="12" rx="2"/><text class="d d1" x="130" y="64.5">ｺ</text>
+<rect class="c1" x="124" y="70" width="12" height="12" rx="2"/><text class="d d1" x="130" y="79.5">ﾊ</text>
+<rect class="c1" x="124" y="85" width="12" height="12" rx="2"/><text class="d d1" x="130" y="94.5">ｾ</text>
+<rect class="c1" x="124" y="100" width="12" height="12" rx="2"/><text class="d d1" x="130" y="109.5">ﾒ</text>
+<rect class="c1" x="124" y="115" width="12" height="12" rx="2"/><text class="d d1" x="130" y="124.5">ｻ</text>
+<rect class="c0" x="124" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="139" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="139" y="55" width="12" height="12" rx="2"/><text class="d d1" x="145" y="64.5">ｱ</text>
+<rect class="c1" x="139" y="70" width="12" height="12" rx="2"/><text class="d d1" x="145" y="79.5">ﾛ</text>
+<rect class="c1" x="139" y="85" width="12" height="12" rx="2"/><text class="d d1" x="145" y="94.5">ﾖ</text>
+<rect class="c2" x="139" y="100" width="12" height="12" rx="2"/><text class="d d2" x="145" y="109.5">ﾁ</text>
+<rect class="c2" x="139" y="115" width="12" height="12" rx="2"/><text class="d d2" x="145" y="124.5">ﾓ</text>
+<rect class="c0" x="139" y="130" width="12" height="12" rx="2"/>
+<rect class="c1" x="154" y="40" width="12" height="12" rx="2"/><text class="d d1" x="160" y="49.5">ﾃ</text>
+<rect class="c1" x="154" y="55" width="12" height="12" rx="2"/><text class="d d1" x="160" y="64.5">ｺ</text>
+<rect class="c2" x="154" y="70" width="12" height="12" rx="2"/><text class="d d2" x="160" y="79.5">ﾖ</text>
+<rect class="c2" x="154" y="85" width="12" height="12" rx="2"/><text class="d d2" x="160" y="94.5">ﾑ</text>
+<rect class="c1" x="154" y="100" width="12" height="12" rx="2"/><text class="d d1" x="160" y="109.5">ﾀ</text>
+<rect class="c1" x="154" y="115" width="12" height="12" rx="2"/><text class="d d1" x="160" y="124.5">ｵ</text>
+<rect class="c1" x="154" y="130" width="12" height="12" rx="2"/><text class="d d1" x="160" y="139.5">ｹ</text>
+<rect class="c1" x="169" y="40" width="12" height="12" rx="2"/><text class="d d1" x="175" y="49.5">ｾ</text>
+<rect class="c1" x="169" y="55" width="12" height="12" rx="2"/><text class="d d1" x="175" y="64.5">4</text>
+<rect class="c2" x="169" y="70" width="12" height="12" rx="2"/><text class="d d2" x="175" y="79.5">+</text>
+<rect class="c2" x="169" y="85" width="12" height="12" rx="2"/><text class="d d2" x="175" y="94.5">6</text>
+<rect class="c1" x="169" y="100" width="12" height="12" rx="2"/><text class="d d1" x="175" y="109.5">ﾛ</text>
+<rect class="c3" x="169" y="115" width="12" height="12" rx="2"/><text class="d d3" x="175" y="124.5">ﾆ</text>
+<rect class="c1" x="169" y="130" width="12" height="12" rx="2"/><text class="d d1" x="175" y="139.5">ｸ</text>
+<rect class="c1" x="184" y="40" width="12" height="12" rx="2"/><text class="d d1" x="190" y="49.5">ﾇ</text>
+<rect class="c1" x="184" y="55" width="12" height="12" rx="2"/><text class="d d1" x="190" y="64.5">4</text>
+<rect class="c1" x="184" y="70" width="12" height="12" rx="2"/><text class="d d1" x="190" y="79.5">ﾜ</text>
+<rect class="c1" x="184" y="85" width="12" height="12" rx="2"/><text class="d d1" x="190" y="94.5">ﾕ</text>
+<rect class="c1" x="184" y="100" width="12" height="12" rx="2"/><text class="d d1" x="190" y="109.5">ﾕ</text>
+<rect class="c1" x="184" y="115" width="12" height="12" rx="2"/><text class="d d1" x="190" y="124.5">ｷ</text>
+<rect class="c0" x="184" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="199" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="199" y="55" width="12" height="12" rx="2"/><text class="d d1" x="205" y="64.5">ﾈ</text>
+<rect class="c1" x="199" y="70" width="12" height="12" rx="2"/><text class="d d1" x="205" y="79.5">ﾓ</text>
+<rect class="c2" x="199" y="85" width="12" height="12" rx="2"/><text class="d d2" x="205" y="94.5">ｳ</text>
+<rect class="c2" x="199" y="100" width="12" height="12" rx="2"/><text class="d d2" x="205" y="109.5">ﾈ</text>
+<rect class="c3" x="199" y="115" width="12" height="12" rx="2"/><text class="d d3" x="205" y="124.5">ﾕ</text>
+<rect class="c3" x="199" y="130" width="12" height="12" rx="2"/><text class="d d3" x="205" y="139.5">0</text>
+<rect class="c2" x="214" y="40" width="12" height="12" rx="2"/><text class="d d2" x="220" y="49.5">ｱ</text>
+<rect class="c2" x="214" y="55" width="12" height="12" rx="2"/><text class="d d2" x="220" y="64.5">ﾃ</text>
+<rect class="c1" x="214" y="70" width="12" height="12" rx="2"/><text class="d d1" x="220" y="79.5">ﾉ</text>
+<rect class="c2" x="214" y="85" width="12" height="12" rx="2"/><text class="d d2" x="220" y="94.5">ﾈ</text>
+<rect class="c4" x="214" y="100" width="12" height="12" rx="2"/><text class="d d4" x="220" y="109.5">ﾝ</text>
+<rect class="c4" x="214" y="115" width="12" height="12" rx="2"/><text class="d d4" x="220" y="124.5">ｿ</text>
+<rect class="c0" x="214" y="130" width="12" height="12" rx="2"/>
+<rect class="c1" x="229" y="40" width="12" height="12" rx="2"/><text class="d d1" x="235" y="49.5">8</text>
+<rect class="c1" x="229" y="55" width="12" height="12" rx="2"/><text class="d d1" x="235" y="64.5">ﾃ</text>
+<rect class="c1" x="229" y="70" width="12" height="12" rx="2"/><text class="d d1" x="235" y="79.5">ﾒ</text>
+<rect class="c0" x="229" y="85" width="12" height="12" rx="2"/>
+<rect class="c0" x="229" y="100" width="12" height="12" rx="2"/>
+<rect class="c1" x="229" y="115" width="12" height="12" rx="2"/><text class="d d1" x="235" y="124.5">ｽ</text>
+<rect class="c0" x="229" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="244" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="244" y="55" width="12" height="12" rx="2"/><text class="d d1" x="250" y="64.5">ｻ</text>
+<rect class="c0" x="244" y="70" width="12" height="12" rx="2"/>
+<rect class="c0" x="244" y="85" width="12" height="12" rx="2"/>
+<rect class="c0" x="244" y="100" width="12" height="12" rx="2"/>
+<rect class="c0" x="244" y="115" width="12" height="12" rx="2"/>
+<rect class="c0" x="244" y="130" width="12" height="12" rx="2"/>
+<rect class="c1" x="259" y="40" width="12" height="12" rx="2"/><text class="d d1" x="265" y="49.5">:</text>
+<rect class="c0" x="259" y="55" width="12" height="12" rx="2"/>
+<rect class="c0" x="259" y="70" width="12" height="12" rx="2"/>
+<rect class="c0" x="259" y="85" width="12" height="12" rx="2"/>
+<rect class="c1" x="259" y="100" width="12" height="12" rx="2"/><text class="d d1" x="265" y="109.5">ﾝ</text>
+<rect class="c0" x="259" y="115" width="12" height="12" rx="2"/>
+<rect class="c0" x="259" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="274" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="274" y="55" width="12" height="12" rx="2"/><text class="d d1" x="280" y="64.5">ﾋ</text>
+<rect class="c1" x="274" y="70" width="12" height="12" rx="2"/><text class="d d1" x="280" y="79.5">ｻ</text>
+<rect class="c2" x="274" y="85" width="12" height="12" rx="2"/><text class="d d2" x="280" y="94.5">ｶ</text>
+<rect class="c1" x="274" y="100" width="12" height="12" rx="2"/><text class="d d1" x="280" y="109.5">ｳ</text>
+<rect class="c1" x="274" y="115" width="12" height="12" rx="2"/><text class="d d1" x="280" y="124.5">ｻ</text>
+<rect class="c0" x="274" y="130" width="12" height="12" rx="2"/>
+<rect class="c0" x="289" y="40" width="12" height="12" rx="2"/>
+<rect class="c1" x="289" y="55" width="12" height="12" rx="2"/><text class="d d1" x="295" y="64.5">ﾐ</text>
+<rect class="c1" x="289" y="70" width="12" height="12" rx="2"/><text class="d d1" x="295" y="79.5">ﾆ</text>
+<rect class="c1" x="289" y="85" width="12" height="12" rx="2"/><text class="d d1" x="295" y="94.5">ﾝ</text>
+<rect class="c2" x="289" y="100" width="12" height="12" rx="2"/><text class="d d2" x="295" y="109.5">ｳ</text>
+<rect class="c1" x="289" y="115" width="12" height="12" rx="2"/><text class="d d1" x="295" y="124.5">ﾜ</text>
+<rect class="c0" x="289" y="130" width="12" height="12" rx="2"/>
+<rect class="c1" x="304" y="40" width="12" height="12" rx="2"/><text class="d d1" x="310" y="49.5">0</text>
+<rect class="c1" x="304" y="55" width="12" height="12" rx="2"/><text class="d d1" x="310" y="64.5">ﾃ</text>
+<rect class="c1" x="304" y="70" width="12" height="12" rx="2"/><text class="d d1" x="310" y="79.5">*</text>
+<rect class="c1" x="304" y="85" width="12" height="12" rx="2"/><text class="d d1" x="310" y="94.5">2</text>
+<rect class="c2" x="304" y="100" width="12" height="12" rx="2"/><text class="d d2" x="310" y="109.5">ﾝ</text>
+<rect class="c2" x="304" y="115" width="12" height="12" rx="2"/><text class="d d2" x="310" y="124.5">ｻ</text>
+<rect class="c0" x="304" y="130" width="12" height="12" rx="2"/>
+<rect class="c1" x="319" y="40" width="12" height="12" rx="2"/><text class="d d1" x="325" y="49.5">ﾅ</text>
+<rect class="c1" x="319" y="55" width="12" height="12" rx="2"/><text class="d d1" x="325" y="64.5">*</text>
+<rect class="c4" x="319" y="70" width="12" height="12" rx="2"/><text class="d d4" x="325" y="79.5">6</text>
+<rect class="c3" x="319" y="85" width="12" height="12" rx="2"/><text class="d d3" x="325" y="94.5">ｻ</text>
+<rect class="c3" x="319" y="100" width="12" height="12" rx="2"/><text class="d d3" x="325" y="109.5">ﾑ</text>
+<rect class="c3" x="319" y="115" width="12" height="12" rx="2"/><text class="d d3" x="325" y="124.5">ｸ</text>
+<rect class="c2" x="319" y="130" width="12" height="12" rx="2"/><text class="d d2" x="325" y="139.5">*</text>
+<rect class="c1" x="334" y="40" width="12" height="12" rx="2"/><text class="d d1" x="340" y="49.5">7</text>
+<rect class="c2" x="334" y="55" width="12" height="12" rx="2"/><text class="d d2" x="340" y="64.5">ﾊ</text>
+<rect class="c1" x="334" y="70" width="12" height="12" rx="2"/><text class="d d1" x="340" y="79.5">ﾒ</text>
+<rect class="c2" x="334" y="85" width="12" height="12" rx="2"/><text class="d d2" x="340" y="94.5">ﾕ</text>
+<rect class="c2" x="334" y="100" width="12" height="12" rx="2"/><text class="d d2" x="340" y="109.5">ﾗ</text>
+<rect class="c1" x="334" y="115" width="12" height="12" rx="2"/><text class="d d1" x="340" y="124.5">ﾑ</text>
+<rect class="c0" x="334" y="130" width="12" height="12" rx="2"/>
+<rect class="c1" x="349" y="40" width="12" height="12" rx="2"/><text class="d d1" x="355" y="49.5">7</text>
+<rect class="c2" x="349" y="55" width="12" height="12" rx="2"/><text class="d d2" x="355" y="64.5">ﾒ</text>
+<rect class="c2" x="349" y="70" width="12" height="12" rx="2"/><text class="d d2" x="355" y="79.5">ｻ</text>
+<rect class="c1" x="349" y="85" width="12" height="12" rx="2"/><text class="d d1" x="355" y="94.5">ｱ</text>
+<rect class="c2" x="349" y="100" width="12" height="12" rx="2"/><text class="d d2" x="355" y="109.5">ﾍ</text>
+<rect class="c3" x="349" y="115" width="12" height="12" rx="2"/><text class="d d3" x="355" y="124.5">ﾍ</text>
+<rect class="c1" x="349" y="130" width="12" height="12" rx="2"/><text class="d d1" x="355" y="139.5">ｵ</text>
+<rect class="c1" x="364" y="40" width="12" height="12" rx="2"/><text class="d d1" x="370" y="49.5">2</text>
+<rect class="c2" x="364" y="55" width="12" height="12" rx="2"/><text class="d d2" x="370" y="64.5">ｷ</text>
+<rect class="c3" x="364" y="70" width="12" height="12" rx="2"/><text class="d d3" x="370" y="79.5">:</text>
+<rect class="c3" x="364" y="85" width="12" height="12" rx="2"/><text class="d d3" x="370" y="94.5">ﾂ</text>
+<rect class="c3" x="364" y="100" width="12" height="12" rx="2"/><text class="d d3" x="370" y="109.5">=</text>
+<rect class="c4" x="364" y="115" width="12" height="12" rx="2"/><text class="d d4" x="370" y="124.5">ﾙ</text>
+<rect class="c0" x="364" y="130" width="12" height="12" rx="2"/>
+<rect class="c2" x="379" y="40" width="12" height="12" rx="2"/><text class="d d2" x="385" y="49.5">ｾ</text>
+<rect class="c3" x="379" y="55" width="12" height="12" rx="2"/><text class="d d3" x="385" y="64.5">8</text>
+<rect class="c4" x="379" y="70" width="12" height="12" rx="2"/><text class="d d4" x="385" y="79.5">ｹ</text>
+<rect class="c3" x="379" y="85" width="12" height="12" rx="2"/><text class="d d3" x="385" y="94.5">0</text>
+<rect class="c3" x="379" y="100" width="12" height="12" rx="2"/><text class="d d3" x="385" y="109.5">ﾖ</text>
+<rect class="c3" x="379" y="115" width="12" height="12" rx="2"/><text class="d d3" x="385" y="124.5">ｽ</text>
+<rect class="c1" x="379" y="130" width="12" height="12" rx="2"/><text class="d d1" x="385" y="139.5">ｿ</text>
+<rect class="c1" x="394" y="40" width="12" height="12" rx="2"/><text class="d d1" x="400" y="49.5">ﾓ</text>
+<rect class="c1" x="394" y="55" width="12" height="12" rx="2"/><text class="d d1" x="400" y="64.5">ﾐ</text>
+<rect class="c2" x="394" y="70" width="12" height="12" rx="2"/><text class="d d2" x="400" y="79.5">ｸ</text>
+<rect class="c2" x="394" y="85" width="12" height="12" rx="2"/><text class="d d2" x="400" y="94.5">ｸ</text>
+<rect class="c4" x="394" y="100" width="12" height="12" rx="2"/><text class="d d4" x="400" y="109.5">ｽ</text>
+<rect class="c4" x="394" y="115" width="12" height="12" rx="2"/><text class="d d4" x="400" y="124.5">0</text>
+<rect class="c0" x="394" y="130" width="12" height="12" rx="2"/>
+<rect class="c2" x="409" y="40" width="12" height="12" rx="2"/><text class="d d2" x="415" y="49.5">ﾇ</text>
+<rect class="c3" x="409" y="55" width="12" height="12" rx="2"/><text class="d d3" x="415" y="64.5">ｸ</text>
+<rect class="c4" x="409" y="70" width="12" height="12" rx="2"/><text class="d d4" x="415" y="79.5">ｳ</text>
+<rect class="c3" x="409" y="85" width="12" height="12" rx="2"/><text class="d d3" x="415" y="94.5">ｺ</text>
+<rect class="c4" x="409" y="100" width="12" height="12" rx="2"/><text class="d d4" x="415" y="109.5">=</text>
+<rect class="c4" x="409" y="115" width="12" height="12" rx="2"/><text class="d d4" x="415" y="124.5">3</text>
+</g>
+<g clip-path="url(#grid)">
+<rect class="hd" x="34" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.4s;animation-delay:-4.5s"/>
+<rect class="hd" x="49" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:4.0s;animation-delay:-0.5s"/>
+<rect class="hd" x="64" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.0s;animation-delay:-2.1s"/>
+<rect class="hd" x="79" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.9s;animation-delay:-1.7s"/>
+<rect class="hd" x="94" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:3.6s;animation-delay:-0.4s"/>
+<rect class="hd" x="109" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:3.8s;animation-delay:-0.8s"/>
+<rect class="hd" x="124" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.1s;animation-delay:-3.9s"/>
+<rect class="hd" x="139" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.9s;animation-delay:-3.5s"/>
+<rect class="hd" x="154" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.0s;animation-delay:-4.5s"/>
+<rect class="hd" x="169" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.0s;animation-delay:-4.9s"/>
+<rect class="hd" x="184" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.6s;animation-delay:-0.6s"/>
+<rect class="hd" x="199" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.4s;animation-delay:-2.7s"/>
+<rect class="hd" x="214" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:4.4s;animation-delay:-1.7s"/>
+<rect class="hd" x="229" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.6s;animation-delay:-4.9s"/>
+<rect class="hd" x="244" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.2s;animation-delay:-1.2s"/>
+<rect class="hd" x="259" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.4s;animation-delay:-0.2s"/>
+<rect class="hd" x="274" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:3.7s;animation-delay:-2.6s"/>
+<rect class="hd" x="289" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.3s;animation-delay:-2.9s"/>
+<rect class="hd" x="304" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:4.7s;animation-delay:-2.3s"/>
+<rect class="hd" x="319" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:7.5s;animation-delay:-3.0s"/>
+<rect class="hd" x="334" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.1s;animation-delay:-2.2s"/>
+<rect class="hd" x="349" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:6.0s;animation-delay:-0.8s"/>
+<rect class="hd" x="364" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:3.8s;animation-delay:-1.6s"/>
+<rect class="hd" x="379" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:5.7s;animation-delay:-1.5s"/>
+<rect class="hd" x="394" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:4.6s;animation-delay:-2.3s"/>
+<rect class="hd" x="409" y="0" width="12" height="45" fill="url(#hg)" style="animation-duration:7.9s;animation-delay:-0.4s"/>
+</g>
+<text class="f" x="34" y="167">2,207 contributions in the last year</text>
+<text class="f" x="34" y="189">updated 2026-11-06</text>
+<g class="legend">
+<text class="m w" x="313" y="189">Less</text>
+<rect class="c0" x="319" y="180" width="12" height="12" rx="2"/>
+<rect class="c1" x="334" y="180" width="12" height="12" rx="2"/><text class="d d1" x="340" y="189.5">4</text>
+<rect class="c2" x="349" y="180" width="12" height="12" rx="2"/><text class="d d2" x="355" y="189.5">ｻ</text>
+<rect class="c3" x="364" y="180" width="12" height="12" rx="2"/><text class="d d3" x="370" y="189.5">ｺ</text>
+<rect class="c4" x="379" y="180" width="12" height="12" rx="2"/><text class="d d4" x="385" y="189.5">ｿ</text>
+<text class="m w" x="421" y="189">More</text>
+</g>
+</svg>
