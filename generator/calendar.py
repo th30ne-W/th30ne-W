@@ -53,6 +53,7 @@ HEAD_HEIGHT = 45
 HEAD_START = -50
 FOOTER_GAP = 22
 BOTTOM_MARGIN = 13
+LEGEND_GAP = 6  # between Less/More and the legend squares
 WEEKDAY_LABELS = ((1, "Mon"), (3, "Wed"), (5, "Fri"))  # (row, label), weeks start on Sunday
 # Month labels closer than this many weeks would overlap (a 3-letter label is ~18px wide).
 MIN_LABEL_WEEKS = 3
@@ -275,8 +276,9 @@ def render_calendar(cal: Calendar, theme: Theme, animated: bool, generated_on: s
         body.append(f'<text class="f" x="{lay.left}" y="{footer_y}">{esc(f"{total} · {updated}")}</text>')
     # legend, right-aligned on the last footer row: Less, the five levels as drawn, More
     more_x = width - lay.margin
-    cells_x = more_x - 30 - (4 * PITCH + CELL)
-    legend = [f'<text class="m w" x="{cells_x - 6}" y="{legend_y}">Less</text>']
+    more_width = 4 * 0.6 * lay.label  # "More" in the monospace label font
+    cells_x = more_x - more_width - LEGEND_GAP - (4 * PITCH + CELL)
+    legend = [f'<text class="m w" x="{_num(cells_x - LEGEND_GAP)}" y="{legend_y}">Less</text>']
     for level in range(5):
         glyph = random.Random(f"legend-{level}").choice(GLYPHS)
         square = _square(level, cells_x + level * PITCH, legend_y - 9, glyph)

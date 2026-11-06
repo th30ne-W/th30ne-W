@@ -405,6 +405,12 @@ class RenderCalendarTests(unittest.TestCase):
             self.assertEqual([len(glyphs_on(root, s)) for s in cells], [0, 1, 1, 1, 1])
             width = float(root.get("viewBox").split()[2])
             self.assertEqual(float(more.get("x")), width - LAYOUTS[layout].margin)  # right-aligned
+            # Less and More keep the same breathing room to the squares (monospace advance ~0.6em)
+            advance = 0.6 * LAYOUTS[layout].label
+            gap_before = xs[0] - float(less.get("x"))  # Less is end-anchored
+            gap_after = (float(more.get("x")) - 4 * advance) - (xs[-1] + CELL)  # More is end-anchored
+            self.assertGreaterEqual(gap_before, 5)
+            self.assertGreaterEqual(gap_after, gap_before - 0.01)
 
     def test_month_labels_sit_above_the_first_week_of_each_month(self):
         for name, theme, animated, layout, svg in self.each():

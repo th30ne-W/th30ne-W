@@ -227,12 +227,12 @@
 <text class="f" x="34" y="167">2,207 contributions in the last year</text>
 <text class="f" x="34" y="189">updated 2026-11-06</text>
 <g class="legend">
-<text class="m w" x="313" y="189">Less</text>
-<rect class="c0" x="319" y="180" width="12" height="12" rx="2"/>
-<rect class="c1" x="334" y="180" width="12" height="12" rx="2"/><text class="d d1" x="340" y="189.5">4</text>
-<rect class="c2" x="349" y="180" width="12" height="12" rx="2"/><text class="d d2" x="355" y="189.5">ｻ</text>
-<rect class="c3" x="364" y="180" width="12" height="12" rx="2"/><text class="d d3" x="370" y="189.5">ｺ</text>
-<rect class="c4" x="379" y="180" width="12" height="12" rx="2"/><text class="d d4" x="385" y="189.5">ｿ</text>
+<text class="m w" x="308.2" y="189">Less</text>
+<rect class="c0" x="314.2" y="180" width="12" height="12" rx="2"/>
+<rect class="c1" x="329.2" y="180" width="12" height="12" rx="2"/><text class="d d1" x="335.2" y="189.5">4</text>
+<rect class="c2" x="344.2" y="180" width="12" height="12" rx="2"/><text class="d d2" x="350.2" y="189.5">ｻ</text>
+<rect class="c3" x="359.2" y="180" width="12" height="12" rx="2"/><text class="d d3" x="365.2" y="189.5">ｺ</text>
+<rect class="c4" x="374.2" y="180" width="12" height="12" rx="2"/><text class="d d4" x="380.2" y="189.5">ｿ</text>
 <text class="m w" x="421" y="189">More</text>
 </g>
 </svg>

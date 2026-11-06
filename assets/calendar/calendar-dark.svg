@@ -450,12 +450,12 @@
 </g>
 <text class="f" x="44" y="167">2,207 contributions in the last year · updated 2026-11-06</text>
 <g class="legend">
-<text class="m w" x="728" y="167">Less</text>
-<rect class="c0" x="734" y="158" width="12" height="12" rx="2"/>
-<rect class="c1" x="749" y="158" width="12" height="12" rx="2"/><text class="d d1" x="755" y="167.5">4</text>
-<rect class="c2" x="764" y="158" width="12" height="12" rx="2"/><text class="d d2" x="770" y="167.5">ｻ</text>
-<rect class="c3" x="779" y="158" width="12" height="12" rx="2"/><text class="d d3" x="785" y="167.5">ｺ</text>
-<g filter="url(#glow)"><rect class="c4" x="794" y="158" width="12" height="12" rx="2"/><text class="d d4" x="800" y="167.5">ｿ</text></g>
+<text class="m w" x="725.6" y="167">Less</text>
+<rect class="c0" x="731.6" y="158" width="12" height="12" rx="2"/>
+<rect class="c1" x="746.6" y="158" width="12" height="12" rx="2"/><text class="d d1" x="752.6" y="167.5">4</text>
+<rect class="c2" x="761.6" y="158" width="12" height="12" rx="2"/><text class="d d2" x="767.6" y="167.5">ｻ</text>
+<rect class="c3" x="776.6" y="158" width="12" height="12" rx="2"/><text class="d d3" x="782.6" y="167.5">ｺ</text>
+<g filter="url(#glow)"><rect class="c4" x="791.6" y="158" width="12" height="12" rx="2"/><text class="d d4" x="797.6" y="167.5">ｿ</text></g>
 <text class="m w" x="836" y="167">More</text>
 </g>
 </svg>
