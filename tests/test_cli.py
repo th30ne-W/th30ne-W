@@ -35,19 +35,10 @@ def run_cli(*args):
 
 
 class RealRegistryTests(unittest.TestCase):
-    def test_registry_is_empty_in_core(self):
-        from generator.__main__ import ASSETS
-
-        self.assertEqual(ASSETS, [])
-
-    def test_build_check_passes_with_empty_registry(self):
+    def test_build_check_passes_on_committed_assets(self):
         res = run_cli("build", "--check")
-        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertEqual(res.returncode, 0, res.stdout + res.stderr)
         self.assertEqual(res.stdout, "")
-
-    def test_build_succeeds_with_empty_registry(self):
-        res = run_cli("build")
-        self.assertEqual(res.returncode, 0, res.stderr)
 
     def test_unknown_command_fails(self):
         self.assertNotEqual(run_cli("bogus").returncode, 0)

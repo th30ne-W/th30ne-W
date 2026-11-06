@@ -1,12 +1,26 @@
 import argparse
 import sys
 from collections.abc import Callable
+from functools import partial
 from pathlib import Path
+
+from .hero import render_hero
+from .theme import THEMES
 
 ROOT = Path(__file__).resolve().parent.parent
 
 # (path relative to the repo root, thunk returning the file's text)
 ASSETS: list[tuple[str, Callable[[], str]]] = []
+
+for _layout, _prefix in (("desktop", "hero"), ("mobile", "hero-mobile")):
+    for _animated, _suffix in ((True, ""), (False, "-static")):
+        for _theme in THEMES:
+            ASSETS.append(
+                (
+                    f"assets/hero/{_prefix}-{_theme.name}{_suffix}.svg",
+                    partial(render_hero, _theme, _layout, _animated),
+                )
+            )
 
 
 def write_assets(assets: list[tuple[str, Callable[[], str]]], root: Path) -> None:
