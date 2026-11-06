@@ -230,6 +230,18 @@ class Seen:
                 size = float(match.group(1))
         return size
 
+    def anchor(self, el):
+        """text-anchor an element ends up with: own attribute, class rules, then inherited, default start."""
+        while el is not None:
+            if el.get("text-anchor"):
+                return el.get("text-anchor")
+            for token in (el.get("class") or "").split():
+                match = re.search(rf"\.{re.escape(token)}\{{[^}}]*text-anchor:(\w+)", self.css)
+                if match:
+                    return match.group(1)
+            el = self.parents.get(el)
+        return "start"
+
     def opacity(self, el):
         found = None
         for token in (el.get("class") or "").split():
@@ -270,7 +282,12 @@ class RenderCalendarTests(unittest.TestCase):
         for name, theme, animated in VARIANTS:
             for layout in layouts:
                 with self.subTest(f"{layout} {name}"):
-                    yield name, theme, animated, layout, render_calendar(self.cal, theme, animated, "2026-11-06", layout)
+                    try:
+                        yield name, theme, animated, layout, render_calendar(self.cal, theme, animated, "2026-11-06", layout)
+                    except GeneratorExit:
+                        # the consumer stopped early (e.g. an assertion failed): close quietly, so subTest
+                        # does not record the GeneratorExit as an extra error
+                        return
 
     def test_parses_with_title_and_desc(self):
         for name, theme, animated, layout, svg in self.each():
@@ -410,7 +427,12 @@ class RenderCalendarTests(unittest.TestCase):
                 if size is None:
                     continue
                 x, advance = float(el.get("x")), 0.62 * size * len(el.text)
-                start, end = (x - advance, x) if "w" in (el.get("class") or "").split() else (x, x + advance)
+                anchor = seen.anchor(el)
+                start, end = {
+                    "start": (x, x + advance),
+                    "end": (x - advance, x),
+                    "middle": (x - advance / 2, x + advance / 2),
+                }[anchor]
                 self.assertGreaterEqual(start, 0, el.text)
                 self.assertLessEqual(end, seen.width, el.text)
 
