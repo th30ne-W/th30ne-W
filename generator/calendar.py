@@ -24,19 +24,21 @@ LEVELS = {
 MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
-LEVEL_OPACITY = (0.12, 0.35, 0.55, 0.78, 1.0)
+LEVEL_OPACITY = (0.12, 0.32, 0.52, 0.76, 1.0)  # cell fill-opacity per level, 0 = no contributions
 
-MARGIN = 20
+MARGIN = 20  # right edge margin
+LEFT = 44  # left margin: room for the Mon/Wed/Fri labels
 PITCH = 15
 GRID_TOP = 40
 ROWS = 7
-CELL = 13  # drawn width of a week column; the remaining 2px of the pitch is the gap
-GLYPH_BASELINE = 11  # glyph baseline below the top of its row
+CELL = 12  # drawn size of a day square; the remaining 3px of the pitch is the gap
+GLYPH_BASELINE = 9.5  # glyph baseline below the top of its cell
 MONTH_Y = 24
 HEAD_HEIGHT = 45
 HEAD_START = -50
 FOOTER_GAP = 22
 BOTTOM_MARGIN = 13
+WEEKDAY_LABELS = ((1, "Mon"), (3, "Wed"), (5, "Fri"))  # (row, label), weeks start on Sunday
 # Month labels closer than this many weeks would overlap (a 3-letter label is ~18px wide).
 MIN_LABEL_WEEKS = 3
 
@@ -162,14 +164,17 @@ def _month_labels(weeks: tuple[tuple[Day, ...], ...]) -> list[tuple[int, str]]:
 
 
 def _style(theme: Theme, animated: bool, grid_bottom: int) -> str:
-    # classes: m=month label, d0-d4=day glyph by level, g=glyph group, f=footer, u=updated, hd=rain head
+    # classes: m=label (month, weekday, legend), w=right-aligned, c0-c4=day square by level,
+    # d/d1-d4=glyph on a square, f=footer text, hd=rain head
     rules = [
-        f".m{{font:10px {MONO};fill:{theme.muted}}}",
-        f".g{{font:12px {MONO};text-anchor:middle}}",
-        f".f{{font:12px {MONO};fill:{theme.text}}}",
-        f".u{{font:12px {MONO};fill:{theme.muted};text-anchor:end}}",
+        f".m{{font:11px {MONO};fill:{theme.muted}}}",
+        ".w{text-anchor:end}",
+        f".f{{font:13px {MONO};fill:{theme.text}}}",
+        f".d{{font:700 10px {MONO};text-anchor:middle}}",
+        f".d1,.d2{{fill:{theme.text}}}",
+        f".d3,.d4{{fill:{theme.bg}}}",
     ]
-    rules += [f".d{level}{{fill-opacity:{opacity:g}}}" for level, opacity in enumerate(LEVEL_OPACITY)]
+    rules += [f".c{level}{{fill:{theme.accent};fill-opacity:{opacity:g}}}" for level, opacity in enumerate(LEVEL_OPACITY)]
     if animated:
         rules.append(".hd{animation-name:r;animation-timing-function:linear;animation-iteration-count:infinite}")
         rules.append(
@@ -178,22 +183,29 @@ def _style(theme: Theme, animated: bool, grid_bottom: int) -> str:
     return "".join(rules)
 
 
+def _square(level: int, x: float, y: float, glyph: str) -> str:
+    """A day square, plus its glyph when the day has contributions (level >= 1)."""
+    out = f'<rect class="c{level}" x="{_num(x)}" y="{_num(y)}" width="{CELL}" height="{CELL}" rx="2"/>'
+    if level >= 1:
+        out += f'<text class="d d{level}" x="{_num(x + CELL / 2)}" y="{_num(y + GLYPH_BASELINE)}">{esc(glyph)}</text>'
+    return out
+
+
 def render_calendar(cal: Calendar, theme: Theme, animated: bool, generated_on: str) -> str:
     week_count = len(cal.weeks)
-    width = 2 * MARGIN + week_count * PITCH
+    width = LEFT + week_count * PITCH - (PITCH - CELL) + MARGIN
     grid_bottom = GRID_TOP + ROWS * PITCH
     footer_y = grid_bottom + FOOTER_GAP
     height = footer_y + BOTTOM_MARGIN
 
     plain, glowing = [], []
     for w, week in enumerate(cal.weeks):
-        x = _num(MARGIN + w * PITCH + CELL / 2)
+        x = LEFT + w * PITCH
         first_row = ROWS - len(week) if w == 0 else 0  # a partial first week hangs from the bottom
         for j, day in enumerate(week):
-            y = GRID_TOP + (first_row + j) * PITCH + GLYPH_BASELINE
+            y = GRID_TOP + (first_row + j) * PITCH
             glyph = random.Random(day.date).choice(GLYPHS)
-            cell = f'<text class="d{day.level}" x="{x}" y="{y}">{esc(glyph)}</text>'
-            (glowing if theme.glow and day.level == 4 else plain).append(cell)
+            (glowing if theme.glow and day.level == 4 else plain).append(_square(day.level, x, y, glyph))
 
     defs = []
     if theme.glow:
@@ -203,7 +215,7 @@ def render_calendar(cal: Calendar, theme: Theme, animated: bool, generated_on: s
         defs.append(
             '<linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">'
             f'<stop offset="0" stop-color="{theme.accent}" stop-opacity="0"/>'
-            f'<stop offset="0.5" stop-color="{theme.accent}" stop-opacity="0.55"/>'
+            f'<stop offset="0.5" stop-color="{theme.accent}" stop-opacity="0.25"/>'
             f'<stop offset="1" stop-color="{theme.accent}" stop-opacity="0"/>'
             "</linearGradient>"
         )
@@ -212,11 +224,13 @@ def render_calendar(cal: Calendar, theme: Theme, animated: bool, generated_on: s
     if defs:
         body.append(f"<defs>{''.join(defs)}</defs>")
     for index, label in _month_labels(cal.weeks):
-        body.append(f'<text class="m" x="{MARGIN + index * PITCH}" y="{MONTH_Y}">{label}</text>')
-    glyphs = "\n".join(plain)
+        body.append(f'<text class="m" x="{LEFT + index * PITCH}" y="{MONTH_Y}">{label}</text>')
+    for row, label in WEEKDAY_LABELS:
+        body.append(f'<text class="m w" x="{LEFT - 6}" y="{GRID_TOP + row * PITCH + 9}">{label}</text>')
+    cells = "\n".join(plain)
     if glowing:
-        glyphs += '\n<g filter="url(#glow)">\n' + "\n".join(glowing) + "\n</g>"
-    body.append(f'<g class="g" fill="{theme.accent}">\n{glyphs}\n</g>')
+        cells += '\n<g filter="url(#glow)">\n' + "\n".join(glowing) + "\n</g>"
+    body.append(f"<g>\n{cells}\n</g>")
     if animated:
         heads = []
         for w in range(week_count):
@@ -224,16 +238,29 @@ def render_calendar(cal: Calendar, theme: Theme, animated: bool, generated_on: s
             duration = round(rng.uniform(3.5, 8), 1)
             delay = round(rng.uniform(0, duration), 1)
             heads.append(
-                f'<rect class="hd" x="{MARGIN + w * PITCH}" y="0" width="{CELL}" height="{HEAD_HEIGHT}" fill="url(#hg)" '
+                f'<rect class="hd" x="{LEFT + w * PITCH}" y="0" width="{CELL}" height="{HEAD_HEIGHT}" fill="url(#hg)" '
                 f'style="animation-duration:{duration:.1f}s;animation-delay:-{delay:.1f}s"/>'
             )
         body.append('<g clip-path="url(#grid)">\n' + "\n".join(heads) + "\n</g>")
-    body.append(f'<text class="f" x="{MARGIN}" y="{footer_y}">{esc(f"{cal.total:,} contributions in the last year")}</text>')
-    body.append(f'<text class="u" x="{width - MARGIN}" y="{footer_y}">{esc(f"updated {generated_on}")}</text>')
+
+    body.append(
+        f'<text class="f" x="{LEFT}" y="{footer_y}">'
+        f'{esc(f"{cal.total:,} contributions in the last year · updated {generated_on}")}</text>'
+    )
+    # legend, right-aligned on the footer row: Less, the five levels as drawn, More
+    more_x = width - MARGIN
+    cells_x = more_x - 30 - (4 * PITCH + CELL)
+    legend = [f'<text class="m w" x="{cells_x - 6}" y="{footer_y}">Less</text>']
+    for level in range(5):
+        glyph = random.Random(f"legend-{level}").choice(GLYPHS)
+        square = _square(level, cells_x + level * PITCH, footer_y - 9, glyph)
+        legend.append(f'<g filter="url(#glow)">{square}</g>' if theme.glow and level == 4 else square)
+    legend.append(f'<text class="m w" x="{more_x}" y="{footer_y}">More</text>')
+    body.append('<g class="legend">\n' + "\n".join(legend) + "\n</g>")
 
     title = "Contribution calendar"
     desc = (
-        f"{cal.total:,} contributions in the last year as of {generated_on}, "
-        "drawn as green matrix rain; brighter glyphs mark busier days."
+        f"{cal.total:,} contributions in the last year as of {generated_on}. "
+        "Each square is one day; brighter squares with matrix glyphs mark busier days, empty days are dim."
     )
     return document(width, height, title, desc, _style(theme, animated, grid_bottom), "\n".join(body))

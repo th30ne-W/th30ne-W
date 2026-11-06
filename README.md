@@ -70,11 +70,11 @@ Laya Computer Use and Homelab are private repositories; details on [williamnunes
   <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: light)" srcset="assets/calendar/calendar-light-static.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="assets/calendar/calendar-dark-static.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/calendar/calendar-light.svg">
-  <img src="assets/calendar/calendar-dark.svg" width="100%" alt="Contribution calendar for the last year drawn as green matrix rain; brighter glyphs mark busier days. Refreshed daily.">
+  <img src="assets/calendar/calendar-dark.svg" width="100%" alt="Contribution calendar for the last year: one square per day, brighter squares mark busier days. Refreshed daily.">
 </picture>
 </a>
 
-Most of my work lives in private repositories; the calendar counts it without exposing names. A GitHub Action in this repo redraws it every day.
+Each square is a day; the brighter it is, the more I shipped. Most of my work lives in private repositories, so the calendar counts it without exposing names. A GitHub Action in this repo redraws it every day.
 
 ### `~$ ping william`
 

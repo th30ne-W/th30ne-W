@@ -2,12 +2,14 @@ import io
 import json
 import os
 import re
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
 import urllib.error
 import xml.etree.ElementTree as ET
+from datetime import datetime, timezone
 from pathlib import Path
 from unittest import mock
 
@@ -181,7 +183,18 @@ class FetchCalendarTests(unittest.TestCase):
 
 
 def glyph_cells(root):
-    return [el for el in root.iter(SVG_NS + "text") if (el.get("class") or "").startswith("d")]
+    return [el for el in root.iter(SVG_NS + "text") if "d" in (el.get("class") or "").split()]
+
+
+def squares_of(root):
+    """Day squares (grid first, legend after) in document order, glow-wrapped ones included."""
+    return [el for el in root.iter(SVG_NS + "rect") if re.fullmatch(r"c\d", el.get("class") or "")]
+
+
+def ancestors(parents, el):
+    while el in parents:
+        el = parents[el]
+        yield el
 
 
 class RenderCalendarTests(unittest.TestCase):
@@ -200,35 +213,49 @@ class RenderCalendarTests(unittest.TestCase):
             self.assertEqual(root.find(SVG_NS + "title").text, "Contribution calendar")
             self.assertEqual(
                 root.find(SVG_NS + "desc").text,
-                "4,003 contributions in the last year as of 2026-11-06, drawn as green matrix rain; "
-                "brighter glyphs mark busier days.",
+                "4,003 contributions in the last year as of 2026-11-06. Each square is one day; "
+                "brighter squares with matrix glyphs mark busier days, empty days are dim.",
             )
-            self.assertEqual(root.get("viewBox"), "0 0 835 180")
+            self.assertEqual(root.get("viewBox"), "0 0 856 180")
 
-    def test_one_glyph_per_day(self):
+    def test_one_square_per_day_and_a_glyph_only_on_active_days(self):
+        active = sum(1 for week in self.cal.weeks for day in week if day.level >= 1)
         for name, theme, animated, svg in self.each():
-            self.assertEqual(len(glyph_cells(ET.fromstring(svg))), FIXTURE_DAYS)
+            root = ET.fromstring(svg)
+            parents = {child: parent for parent in root.iter() for child in parent}
+            in_legend = lambda el: any(p.get("class") == "legend" for p in ancestors(parents, el))
+            squares = [el for el in squares_of(root) if not in_legend(el)]
+            glyphs = [el for el in glyph_cells(root) if not in_legend(el)]
+            self.assertEqual(len(squares), FIXTURE_DAYS)
+            self.assertEqual(len(glyphs), active)
+            self.assertTrue(0 < active < FIXTURE_DAYS)
+            self.assertTrue(all(g.get("class").split()[1] != "d0" for g in glyph_cells(root)))
 
-    def test_glyph_grid_geometry_and_levels(self):
+    def test_square_grid_geometry_and_levels(self):
         root = ET.fromstring(render_calendar(self.cal, LIGHT, False, "2026-11-06"))
-        cells = glyph_cells(root)
+        cells = squares_of(root)
         # first week has 3 days and sits in the bottom three rows; the second week fills all seven
         first = cells[0]
-        self.assertEqual((float(first.get("x")), float(first.get("y"))), (26.5, 40 + 4 * 15 + 11))
+        self.assertEqual((float(first.get("x")), float(first.get("y"))), (44, 40 + 4 * 15))
+        self.assertEqual((first.get("width"), first.get("height"), first.get("rx")), ("12", "12", "2"))
         fourth = cells[3]
-        self.assertEqual(float(fourth.get("x")), 41.5)
-        self.assertEqual(float(fourth.get("y")), 40 + 0 * 15 + 11)
+        self.assertEqual((float(fourth.get("x")), float(fourth.get("y"))), (59, 40))
         # day 1 (count 7) is level 2, day 3 (count 21) level 4
-        self.assertEqual(cells[1].get("class"), "d2")
-        self.assertEqual(cells[3].get("class"), "d4")
+        self.assertEqual(cells[1].get("class"), "c2")
+        self.assertEqual(cells[3].get("class"), "c4")
         # last week: 4 days from the top row, at week column 52
-        last = cells[-1]
-        self.assertEqual((float(last.get("x")), float(last.get("y"))), (20 + 52 * 15 + 6.5, 40 + 3 * 15 + 11))
+        last = cells[FIXTURE_DAYS - 1]
+        self.assertEqual((float(last.get("x")), float(last.get("y"))), (44 + 52 * 15, 40 + 3 * 15))
 
-    def test_level_opacities(self):
-        svg = render_calendar(self.cal, LIGHT, False, "2026-11-06")
-        for level, opacity in enumerate(["0.12", "0.35", "0.55", "0.78", "1"]):
-            self.assertRegex(svg, rf"\.d{level}\{{fill-opacity:{re.escape(opacity)}\}}")
+    def test_level_fill_opacity_rises_strictly(self):
+        for name, theme, animated, svg in self.each():
+            opacities = [
+                float(re.search(rf"\.c{level}\{{fill:{theme.accent};fill-opacity:([\d.]+)\}}", svg).group(1))
+                for level in range(5)
+            ]
+            self.assertEqual(opacities, sorted(set(opacities)))
+            self.assertGreaterEqual(opacities[0], 0.08)  # empty days stay faintly visible
+            self.assertEqual(opacities[-1], 1.0)
 
     def test_glyph_is_chosen_per_date_from_the_matrix_set(self):
         a = render_calendar(self.cal, DARK, False, "2026-11-06")
@@ -240,17 +267,45 @@ class RenderCalendarTests(unittest.TestCase):
         self.assertTrue(all(g in GLYPHS for g in glyphs(a)))
         self.assertGreater(len(set(glyphs(a))), 10)
 
+    def test_weekday_labels_sit_left_of_rows_two_four_and_six(self):
+        for name, theme, animated, svg in self.each():
+            labels = {
+                el.text: (float(el.get("x")), float(el.get("y")))
+                for el in ET.fromstring(svg).iter(SVG_NS + "text")
+                if el.text in ("Mon", "Wed", "Fri")
+            }
+            self.assertEqual(set(labels), {"Mon", "Wed", "Fri"})
+            self.assertEqual([labels[d][1] for d in ("Mon", "Wed", "Fri")], [40 + 1 * 15 + 9, 40 + 3 * 15 + 9, 40 + 5 * 15 + 9])
+            for x, _ in labels.values():
+                self.assertLess(x, 44)
+            self.assertIn("text-anchor:end", svg)
+
+    def test_legend_repeats_the_five_levels_between_less_and_more(self):
+        for name, theme, animated, svg in self.each():
+            root = ET.fromstring(svg)
+            parents = {child: parent for parent in root.iter() for child in parent}
+            texts = {el.text: el for el in root.iter(SVG_NS + "text")}
+            less, more = texts["Less"], texts["More"]
+            legend = parents[less]
+            self.assertIs(parents[more], legend)
+            squares = [el for el in legend.iter(SVG_NS + "rect")]
+            self.assertEqual([el.get("class") for el in squares], [f"c{level}" for level in range(5)])
+            self.assertEqual([g.get("class").split()[1] for g in glyph_cells(legend)], ["d1", "d2", "d3", "d4"])
+            xs = [float(el.get("x")) for el in squares]
+            self.assertEqual(xs, sorted(xs))
+            self.assertLess(float(less.get("x")), xs[0])
+            self.assertGreater(float(more.get("x")), xs[-1])
+            self.assertEqual(more.get("x"), "836")  # right-aligned to the grid's right edge
+            self.assertEqual(more.get("y"), str(40 + 7 * 15 + 22))
+
     def test_month_labels_sit_above_the_first_week_of_each_month(self):
         for name, theme, animated, svg in self.each():
             labels = [
-                (round((float(el.get("x")) - 20) / 15), el.text)
+                (round((float(el.get("x")) - 44) / 15), el.text)
                 for el in ET.fromstring(svg).iter(SVG_NS + "text")
-                if el.get("class") == "m"
+                if el.get("y") == "24"
             ]
             self.assertEqual(labels, FIXTURE_MONTHS)
-            for el in ET.fromstring(svg).iter(SVG_NS + "text"):
-                if el.get("class") == "m":
-                    self.assertEqual(el.get("y"), "24")
 
     def test_colliding_leading_month_label_is_dropped(self):
         # a first week starting on the last days of October, the next week already in November
@@ -267,14 +322,10 @@ class RenderCalendarTests(unittest.TestCase):
     def test_footer_text_and_position(self):
         for name, theme, animated, svg in self.each():
             root = ET.fromstring(svg)
-            footer = [el for el in root.iter(SVG_NS + "text") if el.get("class") in ("f", "u")]
-            texts = {el.get("class"): el for el in footer}
-            self.assertEqual(texts["f"].text, "4,003 contributions in the last year")
-            self.assertEqual(texts["u"].text, "updated 2026-11-06")
-            self.assertEqual(texts["f"].get("y"), str(40 + 7 * 15 + 22))
-            self.assertEqual(texts["u"].get("y"), str(40 + 7 * 15 + 22))
-            self.assertEqual((texts["f"].get("x"), texts["u"].get("x")), ("20", "815"))
-            self.assertIn("text-anchor:end", svg)
+            footer = [el for el in root.iter(SVG_NS + "text") if el.get("class") == "f"]
+            self.assertEqual(len(footer), 1)
+            self.assertEqual(footer[0].text, "4,003 contributions in the last year · updated 2026-11-06")
+            self.assertEqual((footer[0].get("x"), footer[0].get("y")), ("44", str(40 + 7 * 15 + 22)))
 
     def test_animated_variants_have_one_head_per_week(self):
         for name, theme, animated, svg in self.each():
@@ -283,7 +334,7 @@ class RenderCalendarTests(unittest.TestCase):
             root = ET.fromstring(svg)
             heads = [el for el in root.iter(SVG_NS + "rect") if el.get("class") == "hd"]
             self.assertEqual(len(heads), 53)
-            self.assertTrue(all(h.get("width") == "13" and h.get("height") == "45" for h in heads))
+            self.assertTrue(all(h.get("width") == "12" and h.get("height") == "45" for h in heads))
             self.assertIn("@keyframes", svg)
             self.assertIn("translateY(-50px)", svg)
             self.assertIn("translateY(155px)", svg)
@@ -299,7 +350,7 @@ class RenderCalendarTests(unittest.TestCase):
         root = ET.fromstring(render_calendar(self.cal, DARK, True, "2026-11-06"))
         grad = root.find(f".//{SVG_NS}linearGradient")
         stops = [(s.get("stop-color"), s.get("stop-opacity")) for s in grad.iter(SVG_NS + "stop")]
-        self.assertEqual(stops, [("#00ff00", "0"), ("#00ff00", "0.55"), ("#00ff00", "0")])
+        self.assertEqual(stops, [("#00ff00", "0"), ("#00ff00", "0.25"), ("#00ff00", "0")])
 
     def test_still_variants_have_no_animation_or_heads(self):
         for name, theme, animated, svg in self.each():
@@ -334,12 +385,31 @@ class RenderCalendarTests(unittest.TestCase):
                 self.assertNotIn("#00ff00", svg)
                 self.assertNotIn("glow", svg)
 
-    def test_glow_covers_only_level_four_glyphs(self):
-        root = ET.fromstring(render_calendar(self.cal, DARK, False, "2026-11-06"))
-        glowing = [g for g in root.iter(SVG_NS + "g") if g.get("filter") == "url(#glow)"]
-        self.assertEqual(len(glowing), 1)
-        classes = {t.get("class") for t in glowing[0].iter(SVG_NS + "text")}
-        self.assertEqual(classes, {"d4"})
+    def test_glow_covers_exactly_the_level_four_cells_in_dark(self):
+        for animated in (False, True):
+            root = ET.fromstring(render_calendar(self.cal, DARK, animated, "2026-11-06"))
+            parents = {child: parent for parent in root.iter() for child in parent}
+
+            def filtered(el):
+                while el is not None:
+                    if el.get("filter") == "url(#glow)":
+                        return True
+                    el = parents.get(el)
+                return False
+
+            squares = [el for el in root.iter(SVG_NS + "rect") if re.fullmatch(r"c\d", el.get("class") or "")]
+            by_level = {}
+            for el in squares:
+                by_level.setdefault(el.get("class"), set()).add(filtered(el))
+            self.assertEqual(by_level, {"c0": {False}, "c1": {False}, "c2": {False}, "c3": {False}, "c4": {True}})
+            glyphs = glyph_cells(root)
+            self.assertTrue(glyphs)
+            for glyph in glyphs:
+                self.assertEqual(filtered(glyph), "d4" in glyph.get("class").split(), glyph.get("class"))
+
+    def test_no_glow_in_light(self):
+        root = ET.fromstring(render_calendar(self.cal, LIGHT, False, "2026-11-06"))
+        self.assertFalse([el for el in root.iter() if el.get("filter")])
 
     def test_render_is_deterministic(self):
         for name, theme, animated in VARIANTS:
@@ -399,10 +469,15 @@ class CalendarCliTests(unittest.TestCase):
         self.assertNotIn("@keyframes", (self.out / "calendar-dark-static.svg").read_text(encoding="utf-8"))
 
     def test_date_defaults_to_today_utc(self):
+        before = datetime.now(timezone.utc).date()
         res = run_cli("--login", "x", "--fixture", str(FIXTURE), "--out", str(self.out))
+        after = datetime.now(timezone.utc).date()
         self.assertEqual(res.returncode, 0, res.stderr)
         text = (self.out / "calendar-dark.svg").read_text(encoding="utf-8")
-        self.assertRegex(text, r"updated \d{4}-\d{2}-\d{2}<")
+        match = re.search(r"updated (\d{4}-\d{2}-\d{2})<", text)
+        self.assertIsNotNone(match)
+        # a run that straddles UTC midnight may legitimately land on either day
+        self.assertIn(match.group(1), {before.isoformat(), after.isoformat()})
 
     def test_missing_token_without_fixture_exits_2(self):
         res = run_cli("--login", "x", "--out", str(self.out))
@@ -455,10 +530,21 @@ class CalendarCliTests(unittest.TestCase):
                 self.assertEqual(res.returncode, 2)
                 self.assertEqual(self.files(), [])
 
-    def test_calendar_is_not_part_of_the_static_asset_registry(self):
-        from generator.__main__ import ASSETS
-
-        self.assertFalse([rel for rel, _ in ASSETS if "calendar" in rel])
+    def test_build_does_not_touch_the_calendar(self):
+        # the calendar needs live data, so `build` must neither write nor change calendar files
+        root = self.tmp / "repo"
+        for name in ("generator", "fonts"):
+            shutil.copytree(REPO / name, root / name, ignore=shutil.ignore_patterns("__pycache__"))
+        calendar_dir = root / "assets" / "calendar"
+        calendar_dir.mkdir(parents=True)
+        (calendar_dir / "calendar-dark.svg").write_bytes(b"sentinel")
+        res = subprocess.run(
+            [sys.executable, "-m", "generator", "build"], cwd=root, capture_output=True, text=True, env=clean_env()
+        )
+        self.assertEqual(res.returncode, 0, res.stderr)
+        self.assertTrue((root / "assets" / "hero").is_dir())
+        self.assertEqual([p.name for p in calendar_dir.iterdir()], ["calendar-dark.svg"])
+        self.assertEqual((calendar_dir / "calendar-dark.svg").read_bytes(), b"sentinel")
 
 
 if __name__ == "__main__":
