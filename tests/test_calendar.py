@@ -84,6 +84,17 @@ class ParseCalendarTests(unittest.TestCase):
         with self.assertRaisesRegex(CalendarError, "Bad things"):
             parse_calendar({"errors": [{"message": "Bad things"}], "data": None})
 
+    def test_malformed_errors_field_raises_calendar_error(self):
+        for errors in (True, 1, "boom", ["boom"], [1], [{"nope": 1}], [{"message": "ok"}, "boom"], {"message": "x"}):
+            with self.subTest(errors=errors), self.assertRaisesRegex(CalendarError, "GitHub API error"):
+                parse_calendar({"errors": errors, "data": None})
+
+    def test_empty_errors_field_is_ignored(self):
+        for errors in (None, [], False):
+            payload = load_payload()
+            payload["errors"] = errors
+            self.assertEqual(len(parse_calendar(payload).weeks), 53)
+
     def test_missing_user_raises(self):
         with self.assertRaisesRegex(CalendarError, "user"):
             parse_calendar({"data": {"user": None}})
@@ -98,6 +109,13 @@ class ParseCalendarTests(unittest.TestCase):
         del graphql_days(payload)[0]["contributionDays"][0]["date"]
         with self.assertRaises(CalendarError):
             parse_calendar(payload)
+
+    def test_invalid_dates_raise(self):
+        for bad in ("", "2026-00-01", "2026-13-01", "2026-02-30", "20261106", "2026-1-6", "2026-11-06T00:00:00", " 2026-11-06", "\u0662026-11-06", None, 20261106, ["2026-11-06"]):
+            payload = load_payload()
+            graphql_days(payload)[2]["contributionDays"][1]["date"] = bad
+            with self.subTest(date=bad), self.assertRaisesRegex(CalendarError, "date"):
+                parse_calendar(payload)
 
 
 class FakeResponse(io.BytesIO):
@@ -417,6 +435,17 @@ class CalendarCliTests(unittest.TestCase):
         res = run_cli("--login", "x", "--fixture", str(self.tmp / "nope.json"), "--out", str(self.out))
         self.assertEqual(res.returncode, 1)
         self.assertTrue(res.stderr.startswith("calendar: "), res.stderr)
+        self.assertEqual(self.files(), [])
+
+    def test_invalid_date_in_fixture_exits_1_and_writes_nothing(self):
+        payload = load_payload()
+        graphql_days(payload)[0]["contributionDays"][0]["date"] = "2026-13-01"
+        bad = self.tmp / "bad-date.json"
+        bad.write_text(json.dumps(payload), encoding="utf-8")
+        res = run_cli("--login", "x", "--fixture", str(bad), "--out", str(self.out), "--date", "2026-11-06")
+        self.assertEqual(res.returncode, 1)
+        self.assertTrue(res.stderr.startswith("calendar: "), res.stderr)
+        self.assertIn("date", res.stderr)
         self.assertEqual(self.files(), [])
 
     def test_invalid_date_is_a_usage_error(self):

@@ -1,5 +1,7 @@
+import datetime
 import json
 import random
+import re
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
@@ -56,10 +58,21 @@ class Calendar:
     weeks: tuple[tuple[Day, ...], ...]
 
 
-def _error_message(error: object) -> str:
-    if isinstance(error, dict) and "message" in error:
-        return str(error["message"])
-    return str(error)
+def _errors_message(errors: object) -> str:
+    """Message for a truthy GraphQL `errors` value, whatever shape it has."""
+    if isinstance(errors, list) and all(isinstance(e, dict) and "message" in e for e in errors):
+        return "GitHub API error: " + "; ".join(str(e["message"]) for e in errors)
+    return "GitHub API error: unexpected errors payload"
+
+
+def _valid_date(value: object) -> bool:
+    if not isinstance(value, str) or not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", value):
+        return False
+    try:
+        datetime.date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
 
 
 def parse_calendar(payload: dict) -> Calendar:
@@ -67,7 +80,7 @@ def parse_calendar(payload: dict) -> Calendar:
     if not isinstance(payload, dict):
         raise CalendarError("unexpected response: not a JSON object")
     if payload.get("errors"):
-        raise CalendarError("GitHub API error: " + "; ".join(_error_message(e) for e in payload["errors"]))
+        raise CalendarError(_errors_message(payload["errors"]))
     data = payload.get("data")
     if not isinstance(data, dict):
         raise CalendarError("unexpected response: no data")
@@ -86,8 +99,10 @@ def parse_calendar(payload: dict) -> Calendar:
                 if name not in LEVELS:
                     raise CalendarError(f"unknown contribution level: {name!r}")
                 date, count = raw_day["date"], raw_day["contributionCount"]
-                if not isinstance(date, str) or not isinstance(count, int):
-                    raise CalendarError("unexpected response: malformed contribution day")
+                if not _valid_date(date):
+                    raise CalendarError(f"invalid contribution date: {date!r}")
+                if not isinstance(count, int):
+                    raise CalendarError("unexpected response: malformed contribution count")
                 days.append(Day(date, count, LEVELS[name]))
             if not days:
                 raise CalendarError("unexpected response: empty contribution week")
