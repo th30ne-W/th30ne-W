@@ -4,6 +4,8 @@ from collections.abc import Callable
 from functools import partial
 from pathlib import Path
 
+from .cards import render_card
+from .content import PROJECTS
 from .hero import render_hero
 from .theme import THEMES
 
@@ -21,6 +23,10 @@ for _layout, _prefix in (("desktop", "hero"), ("mobile", "hero-mobile")):
                     partial(render_hero, _theme, _layout, _animated),
                 )
             )
+
+for _project in PROJECTS:
+    for _theme in THEMES:
+        ASSETS.append((f"assets/cards/{_project.slug}-{_theme.name}.svg", partial(render_card, _project, _theme)))
 
 
 def write_assets(assets: list[tuple[str, Callable[[], str]]], root: Path) -> None:
