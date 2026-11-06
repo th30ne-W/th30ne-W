@@ -1,8 +1,12 @@
 import re
+import shutil
+import subprocess
+import sys
+import tempfile
 import unittest
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
-from generator.__main__ import ASSETS
 from generator.hero import render_hero
 from generator.theme import DARK, LIGHT
 
@@ -40,8 +44,8 @@ class HeroVariantTests(unittest.TestCase):
             root = ET.fromstring(svg)
             self.assertEqual(root.find(SVG_NS + "title").text, TITLE)
             self.assertEqual(root.find(SVG_NS + "desc").text, DESC)
-            # mobile: 380 tall in the brief, 400 once the stacked chips collide with the tagline
-            self.assertEqual(root.get("viewBox"), "0 0 840 300" if layout == "desktop" else "0 0 420 400")
+            # mobile: 380 tall in the brief, 410 so the tagline has room between the chips and the plate border
+            self.assertEqual(root.get("viewBox"), "0 0 840 300" if layout == "desktop" else "0 0 420 410")
 
     def test_within_size_budget(self):
         for path, theme, layout, animated, svg in self.each():
@@ -117,11 +121,20 @@ class HeroVariantTests(unittest.TestCase):
 
 
 class HeroRegistryTests(unittest.TestCase):
-    def test_registry_covers_the_eight_assets(self):
-        registry = {rel: render for rel, render in ASSETS if rel.startswith("assets/hero/")}
-        self.assertEqual(sorted(registry), sorted(path for path, *_ in VARIANTS))
-        for path, theme, layout, animated in VARIANTS:
-            self.assertEqual(registry[path](), render_hero(theme, layout, animated))
+    def test_build_writes_the_eight_heroes_through_the_cli(self):
+        repo = Path(__file__).resolve().parent.parent
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("generator", "fonts"):
+                shutil.copytree(repo / name, root / name, ignore=shutil.ignore_patterns("__pycache__"))
+            result = subprocess.run(
+                [sys.executable, "-m", "generator", "build"], cwd=root, capture_output=True, text=True
+            )
+            self.assertEqual(result.returncode, 0, result.stderr)
+            for path, theme, layout, animated in VARIANTS:
+                with self.subTest(path):
+                    self.assertTrue((root / path).is_file())
+                    self.assertEqual((root / path).read_text("utf-8"), render_hero(theme, layout, animated))
 
 
 if __name__ == "__main__":
