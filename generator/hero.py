@@ -117,20 +117,20 @@ def _desktop(theme: Theme, animated: bool) -> tuple[int, int, str]:
 
 
 def _mobile(theme: Theme, animated: bool) -> tuple[int, int, str]:
-    # Stacked chips end at y=322, which is where the tagline sits in the base layout,
-    # so the plate and canvas grow by 20 and the tagline moves down with them.
-    width, height = 420, 400
+    # Stacked chips end at y=322; the tagline sits 23px below them and the plate ends 15px
+    # under its baseline, so both gaps around the tagline are roughly equal.
+    width, height = 420, 410
     rain = rain_columns(random.Random(11), 24, width, height, 12, PITCH, animated, theme)
     body = [
         f'<rect width="{width}" height="{height}" fill="{theme.bg}"/>',
         f'<g opacity=".45">{rain}</g>',
-        _plate(theme, 20, 50, 380, 300),
+        _plate(theme, 20, 50, 380, 310),
         _name(theme, 210, 112, 36, "WILLIAM"),
         _name(theme, 210, 152, 36, "NUNES"),
         _headline(theme, 210, 192, 16, "Where AI agents"),
         _headline(theme, 210, 214, 16, "meet real work."),
         _chip_stack(theme, 210, (232, 264, 296)),
-        _tagline(theme, 210, 342),
+        _tagline(theme, 210, 345),
     ]
     return width, height, "\n".join(body)
 
