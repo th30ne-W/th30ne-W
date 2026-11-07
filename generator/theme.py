@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+__all__ = ["Theme", "DARK", "LIGHT", "THEMES"]
+
 
 @dataclass(frozen=True)
 class Theme:

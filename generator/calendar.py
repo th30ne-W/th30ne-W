@@ -9,6 +9,8 @@ from dataclasses import dataclass
 from .svg import GLOW_FILTER, GLYPHS, document, esc
 from .theme import Theme
 
+__all__ = ["Day", "Calendar", "CalendarError", "parse_calendar", "fetch_calendar", "render_calendar"]
+
 GRAPHQL_URL = "https://api.github.com/graphql"
 QUERY = (
     "query($login:String!){user(login:$login){contributionsCollection{contributionCalendar"

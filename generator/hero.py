@@ -4,6 +4,8 @@ from .fonts import font_face
 from .svg import GLOW_FILTER, RAIN_FONT, document, esc, rain_columns
 from .theme import Theme
 
+__all__ = ["render_hero"]
+
 TITLE = "William Nunes \u2014 matrix rain banner"
 DESC = (
     "Name plate for William Nunes: Where AI agents meet real work. "

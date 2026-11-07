@@ -3,6 +3,8 @@ from .fonts import font_face
 from .svg import GLOW_FILTER, document, esc
 from .theme import Theme
 
+__all__ = ["render_card"]
+
 ORBITRON = "Orbitron, 'Arial Black', sans-serif"
 BODY_FONT = "-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
 MONO_FONT = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
