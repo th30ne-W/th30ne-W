@@ -2,6 +2,8 @@ import base64
 from functools import cache
 from pathlib import Path
 
+__all__ = ["font_face"]
+
 FONTS_DIR = Path(__file__).resolve().parent.parent / "fonts"
 WEIGHTS = (500, 700)
 

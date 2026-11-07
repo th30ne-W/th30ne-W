@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 
+__all__ = ["Project", "PROJECTS"]
+
 
 @dataclass(frozen=True)
 class Project:
